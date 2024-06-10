@@ -1,12 +1,28 @@
 {
-  "author": "",
+  
+  "author": "Mark Dinglasa",
   "browserslist": [],
   "bugs": {
-    "url": "https://github.com/thenewboston-developers/tnbOS/issues"
+    "url": "https://github.com/ryanmarkdinglasa/SM-SIA/issues"
+  },
+  "scripts": {
+    "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
+    "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
+    "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
+    "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
+    "package": "ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish never",
+    "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
+    "prepare": "husky install",
+    "rebuild": "electron-rebuild --parallel --types prod,dev,optional --module-dir release/app",
+    "start": "ts-node ./.erb/scripts/check-port-in-use.js && npm run start:renderer",
+    "start:main": "cross-env NODE_ENV=development electronmon -r ts-node/register/transpile-only .",
+    "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
+    "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
+    "test": "jest"
   },
   "build": {
-    "productName": "tnbOS",
-    "appId": "com.thenewboston.tnbOS",
+    "productName": "innosoft_sm_sia",
+    "appId": "com.innosoft.sm_sia",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -61,17 +77,12 @@
     },
     "extraResources": [
       "./assets/**"
-    ],
-    "publish": {
-      "provider": "github",
-      "owner": "thenewboston-developers",
-      "repo": "tnbOS"
-    }
+    ]
   },
   "dependencies": {
     "@mdi/js": "^7.0.96",
     "@mdi/react": "^1.6.1",
-    "@reduxjs/toolkit": "^1.8.3",
+    "@reduxjs/toolkit": "^1.9.7",
     "axios": "^0.27.2",
     "country-list": "^2.3.0",
     "electron-debug": "^3.2.0",
@@ -179,7 +190,6 @@
       "src/main/**"
     ]
   },
-  "homepage": "https://github.com/thenewboston-developers/tnbOS#readme",
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -196,25 +206,10 @@
     ]
   },
   "main": "./src/main/main.ts",
-  "name": "tnbos",
+  "name": "innosoft_sm_sia",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thenewboston-developers/tnbOS.git"
-  },
-  "scripts": {
-    "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
-    "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
-    "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
-    "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
-    "package": "ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish never",
-    "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
-    "prepare": "husky install",
-    "rebuild": "electron-rebuild --parallel --types prod,dev,optional --module-dir release/app",
-    "start": "ts-node ./.erb/scripts/check-port-in-use.js && npm run start:renderer",
-    "start:main": "cross-env NODE_ENV=development electronmon -r ts-node/register/transpile-only .",
-    "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
-    "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
-    "test": "jest"
+    "url": "git+https://github.com/ryanmarkdinglasa/SM-SIA.git"
   },
   "version": "1.0.0"
 }
