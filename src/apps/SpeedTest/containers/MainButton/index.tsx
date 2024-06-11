@@ -5,7 +5,7 @@ export const MainButton: SFC = ({className}) => {
     return (
         <>
             <S.Container className={className}>
-                <h1>MainButton</h1>
+                GO
             </S.Container>
         </>
     );

@@ -1,11 +1,13 @@
 import {SFC} from 'system/types';
 import * as S from './Styles';
+import { mdiCircle } from '@mdi/js';
 
 export const ConnectionStatus: SFC = ({className}) => {
     return (
         <>
             <S.Container className={className}>
-                <h1>ConnectionStatus</h1>
+                <S.Icon path={mdiCircle} size="15px" />
+                <S.Text> Connected </S.Text>
             </S.Container>
         </>
     );

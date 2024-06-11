@@ -6,7 +6,8 @@ export const Timer: SFC = ({className}) => {
     return (
         <>
             <S.Container className={className}>
-                <h1>Timer</h1>
+                <S.TopText>12.5957</S.TopText>
+                <S.BottomText>seconds</S.BottomText>
             </S.Container>
         </>
     );
