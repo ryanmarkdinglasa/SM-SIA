@@ -1,10 +1,10 @@
 {
-  "author": "",
+  "author": "Mark Dinglasa",
   "dependencies": {},
   "description": "Platform for applications.",
   "license": "MIT",
   "main": "./dist/main/main.js",
-  "name": "tnbos",
+  "name": "innosoft_sm_sia",
   "scripts": {
     "electron-rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
     "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts",

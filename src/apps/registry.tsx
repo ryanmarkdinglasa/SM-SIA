@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import {SpeedTest, SpeedTestRegistration } from 'apps/SpeedTest/registration';
 import {University, UniversityElectronStore, UniversityRegistration} from 'apps/University/registration';
 import {getManager} from 'system/selectors/state';
 import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
@@ -11,7 +12,8 @@ export const appReducers = {
 };
 
 export const appRegistrations: AppRegistration[] = [ 
-  UniversityRegistration 
+  UniversityRegistration,
+  SpeedTestRegistration
 ];
 
 export const appRouters: AppDataHandlers = {
@@ -23,7 +25,8 @@ export const Apps: SFC = () => {
 
   return (
     <>
-      <University display={activeApp} />
+      <University display={activeApp === UniversityRegistration.appId} />
+      <SpeedTest display={activeApp === SpeedTestRegistration.appId} />
     </>
   );
 };

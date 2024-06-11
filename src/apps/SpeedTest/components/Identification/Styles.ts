@@ -1,26 +1,23 @@
-import styled from 'styled-components';
-
-import {colors} from 'apps/SpeedTest/styles';
-
-export const BottomText = styled.div`
-  font-size: 12px;
-  margin-top: 2px;
-`;
+import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+    display: flex;
 `;
 
 export const Img = styled.img`
-  border-radius: 50%;
-  height: 36px;
-  margin-right: 10px;
-  width: 36px;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    border:1px solid #a6b0cf;
+    margin-right: 10px;
 `;
 
 export const Text = styled.div``;
-
 export const TopText = styled.div`
-  color: ${colors.fonts.bright};
-  font-size: 14px;
+    color: #f6f6f6;
+    font-size: 14px;
+`;
+export const BottomText = styled.div`
+    font-size: 12px;
+    margin-top: 2px;
 `;
