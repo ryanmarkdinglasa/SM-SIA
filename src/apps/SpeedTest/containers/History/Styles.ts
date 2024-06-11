@@ -37,9 +37,7 @@ export const Table = styled.table`
     border-collapse: collapse;
     width: 100%;
     text-align:left;
-    
 `;
-
 export const Th = styled.th`
  ${cellStyling}
  ${edgePadding}
@@ -50,6 +48,6 @@ export const Tr = styled.tr`
     ${edgePadding}
 `;
 export const Td = styled.td`
- ${cellStyling}
+    ${cellStyling}
     ${edgePadding}
 `;
