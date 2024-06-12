@@ -40,6 +40,7 @@ export const Icon = styled(UIcon)`
 
 export const Content = styled.div`
     margin-top: 12px;
+    padding: 8px 12px;
 `;
 
 export const Header = styled.div`

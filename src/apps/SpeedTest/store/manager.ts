@@ -12,7 +12,7 @@ const manager = createSlice({
     name:SPEED_TEST_MANAGER,
     initialState,
     reducers:{
-        setActiveAccountNumner: ( state: Manager, { payload: accountNumber }: PayloadAction<string | null>) => {
+        setActiveAccountNumber: ( state: Manager, { payload: accountNumber }: PayloadAction<string | null>) => {
             state.activeAccountNumber = accountNumber;
             window.electron.ipc.send(IpcChannel.setStoreValue, { key: SPEED_TEST_MANAGER, state: current(state) });
         },
@@ -24,6 +24,6 @@ const manager = createSlice({
     },
 })
 
-export const  { setActiveAccountNumner, setActiveNetworkId, setManager} = manager.actions;
+export const  { setActiveAccountNumber, setActiveNetworkId, setManager} = manager.actions;
 
 export default manager.reducer;
