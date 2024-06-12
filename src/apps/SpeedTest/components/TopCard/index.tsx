@@ -1,14 +1,20 @@
 import {SFC} from 'system/types';
 import * as S from './Styles';
-import { SpaceItems } from '../';
+import { ReactNode } from 'react'
 
-export const TopCard: SFC = ({className}) => {
+export interface TopCardProps {
+    heading: string;
+    children: ReactNode;
+};
+
+export const TopCard: SFC<TopCardProps> = ({children, className, heading}) => {
+  
     return (
         <>
             <S.Container className={className}>
-                <S.Heading> {'Network'} </S.Heading>
+                <S.Heading> { heading } </S.Heading>
                 <S.Content>
-                    <SpaceItems />
+                    { children }
                 </S.Content>
             </S.Container>
         </>
