@@ -2,7 +2,6 @@ import {AppDispatch, SFC} from 'system/types';
 import { SelectCard, getActiveAccountNumber, AccountIdentification } from '../..';
 import { useSelector, useDispatch } from 'react-redux';
 import { setActiveAccountNumber } from 'apps/SpeedTest/store/manager';
-import { useState } from 'react';
 
 export interface AccountSelectCardProps{
     accountNumber: string;
@@ -11,17 +10,19 @@ export interface AccountSelectCardProps{
 export const AccountSelectCard: SFC<AccountSelectCardProps> = ({accountNumber, className}) => {
     const activeAccountNumber = useSelector(getActiveAccountNumber);
     const dispatch = useDispatch<AppDispatch>();
-    const [select, setSelect] = useState(false);
     const handleClick = () => {
         const payload = accountNumber === activeAccountNumber ? null : accountNumber;
         dispatch(setActiveAccountNumber(payload));  
-        if (payload) setSelect(true);
-    }
     
+    }
+    console.log('AccountNumber: '+ accountNumber);
+    console.log('Active AccountNumber: ');
+    console.log(activeAccountNumber);
+
 
     return (
         <>
-            <SelectCard  className={ className } isSelected={ select } onClick={ handleClick }>
+            <SelectCard  className={ className } isSelected={ accountNumber === activeAccountNumber } onClick={ handleClick }>
                 <AccountIdentification  accountNumber={accountNumber} />
             </SelectCard>
         </>

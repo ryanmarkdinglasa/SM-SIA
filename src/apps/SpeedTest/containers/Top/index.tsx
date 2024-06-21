@@ -17,7 +17,7 @@ export const Top: SFC = ({className}) => {
 
     const renderActiveAccount = () => {
         return (
-            <SpaceItems leftContent={<AccountIdentification accountNumber={activeAccountNumber!}/>} rightContent={<S.Icon path={mdiPencil} size={28}/>}/>
+            <SpaceItems leftContent={<AccountIdentification accountNumber={activeAccountNumber!}/>} rightContent={<S.Icon path={mdiPencil} size={1}/>}/>
         )
     };
 
