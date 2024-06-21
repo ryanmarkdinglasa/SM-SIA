@@ -1,3 +1,4 @@
+import MdiIcon from "@mdi/react";
 import styled from "styled-components";
 
 export const Button = styled.div`
@@ -22,4 +23,17 @@ export const Container = styled.div`
     gap: 20px;
     justify-content: center;
     width: 100%;
+`;
+
+export const Icon = styled(MdiIcon)`
+    border-radius: 50%;
+    color: #74788d;
+    padding: 4px;
+    margin-left: 10px;
+    transition: all 0.5s;
+    &:hover{
+        background:#31394e;
+        color: #556ee5;
+        cursor:pointer;
+    }
 `;

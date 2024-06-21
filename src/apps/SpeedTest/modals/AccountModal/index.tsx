@@ -14,7 +14,7 @@ export const AccountModal: SFC<AccountModalProps> = ({className, close}) => {
 
     const renderAccountCards = () => {
         const orderedAccounts = orderby(Object.values(accounts), ['displayName']);
-        return orderedAccounts.map( ({accountNumber}) => <AccountSelectCard  accountNumber={accountNumber}/>)
+        return orderedAccounts.map( ({accountNumber}) => <AccountSelectCard  key={accountNumber} accountNumber={accountNumber}/>)
     };
 
     return (

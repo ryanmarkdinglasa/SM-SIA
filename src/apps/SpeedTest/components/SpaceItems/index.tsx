@@ -1,16 +1,18 @@
 import {SFC} from 'system/types';
+import { ReactNode } from 'react';
 import * as S from './Styles';
-import { Identification } from '../';
-import { mdiPencil } from '@mdi/js';
 
-export const SpaceItems: SFC = ({className}) => {
+export interface SpaceItemsProps {
+    leftContent: ReactNode;
+    rightContent: ReactNode;
+}
+
+export const SpaceItems: SFC<SpaceItemsProps> = ({className, leftContent, rightContent}) => {
     return (
         <>
             <S.Container className={className}>
-                <S.Left>
-                    <Identification/>
-                </S.Left>
-                <S.Right> <S.Icon path={mdiPencil} size="28px"/></S.Right>
+                <S.Left> {leftContent} </S.Left>
+                <S.Right> {rightContent} </S.Right>
             </S.Container>
         </>
     );

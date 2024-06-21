@@ -10,8 +10,6 @@ const selectedMixin = css`
     }
 `;
 
-
-
 export const Container = styled.div<{isSelected:boolean}>`
     background: rgba(166, 176, 287, 0.04);
     border: 1px solid transparent;

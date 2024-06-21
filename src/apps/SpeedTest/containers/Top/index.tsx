@@ -1,9 +1,9 @@
 import {SFC} from 'system/types';
 import { useToggle } from 'system/hooks';
-
+import { mdiPencil } from '@mdi/js';
 import { TopCard, getActiveAccountNumber, AccountModal} from '../..'
 import * as S from './Styles';
-import { SpaceItems } from '../../components';
+import { SpaceItems, AccountIdentification } from '../../components';
 import { useSelector } from 'react-redux';
 
 export const Top: SFC = ({className}) => {
@@ -12,7 +12,13 @@ export const Top: SFC = ({className}) => {
 
     const renderAccountContent = () => {
         if (!activeAccountNumber) return <S.Button onClick={toggleAccountModal}> Select Account </S.Button>;
-        return <SpaceItems />;
+        return renderActiveAccount();
+    };
+
+    const renderActiveAccount = () => {
+        return (
+            <SpaceItems leftContent={<AccountIdentification accountNumber={activeAccountNumber!}/>} rightContent={<S.Icon path={mdiPencil} size={28}/>}/>
+        )
     };
 
     const renderAccountModal = () => {
