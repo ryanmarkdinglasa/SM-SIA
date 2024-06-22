@@ -15,10 +15,6 @@ export const AccountSelectCard: SFC<AccountSelectCardProps> = ({accountNumber, c
         dispatch(setActiveAccountNumber(payload));  
     
     }
-    console.log('AccountNumber: '+ accountNumber);
-    console.log('Active AccountNumber: ');
-    console.log(activeAccountNumber);
-
 
     return (
         <>

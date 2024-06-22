@@ -4,6 +4,7 @@ import {University, UniversityElectronStore, UniversityRegistration} from 'apps/
 import {getManager} from 'system/selectors/state';
 import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
 import {AccountManager, AccountManagerRegistration} from 'apps/AccountManager/registration';
+import { NetworkManager, NetworkManagerRegistration } from './NetworkManager/registration';
 
 export interface AppsElectronStore extends UniversityElectronStore, SpeedTestElectronStore {}
 
@@ -14,6 +15,7 @@ export const appReducers = {
 
 export const appRegistrations: AppRegistration[] = [ 
   AccountManagerRegistration,
+  NetworkManagerRegistration,
   UniversityRegistration,
   SpeedTestRegistration
 ];
@@ -27,6 +29,7 @@ export const Apps: SFC = () => {
 
   return (
     <>
+      <NetworkManager display={activeApp === NetworkManagerRegistration.appId} />
       <AccountManager display={activeApp === AccountManagerRegistration.appId} />
       <University display={activeApp === UniversityRegistration.appId} />
       <SpeedTest display={activeApp === SpeedTestRegistration.appId} />

@@ -1,6 +1,9 @@
 import MdiIcon from "@mdi/react";
 import styled from "styled-components";
 
+import {AccountIdentification as UAccountIdentification, NetworkIdentification as UNetworkIdentification } from '../../components';
+
+
 export const Button = styled.div`
     background: transparent;
     border: 1px solid #74788d;
@@ -36,4 +39,13 @@ export const Icon = styled(MdiIcon)`
         color: #556ee5;
         cursor:pointer;
     }
+`;
+
+
+export const NetworkIdentification = styled(UNetworkIdentification)`
+  margin-right: 10px;
+`;
+
+export const AccountIdentification = styled(UAccountIdentification)`
+  margin-right: 10px;
 `;

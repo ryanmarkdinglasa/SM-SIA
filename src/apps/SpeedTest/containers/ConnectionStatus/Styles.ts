@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import MdiIcon from '@mdi/react';
 
+import { ConnectionStatus } from "apps/SpeedTest/types";
+
 export const Container = styled.div`
     margin-top: 12px;
     width: 100%;
@@ -12,9 +14,10 @@ export const Container = styled.div`
     background: #2a3042;
 `;
 
-export const Icon = styled(MdiIcon)`
+export const Icon = styled(MdiIcon)<{status: ConnectionStatus}>`
     border-radius: 50%;
     color: #34c38f;
+
 `;
 
 
