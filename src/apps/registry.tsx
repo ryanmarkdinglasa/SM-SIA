@@ -1,38 +1,44 @@
-import {useSelector} from 'react-redux';
-import {SpeedTest, SpeedTestRegistration, SpeedTestElectronStore } from 'apps/SpeedTest/registration';
-import {University, UniversityElectronStore, UniversityRegistration} from 'apps/University/registration';
+import {useSelector, useDispatch} from 'react-redux';
+import {DatabaseManager, DatabaseManagerElectronStore, DatabaseManagerRegistration} from 'apps/DatabaseManager/registration';
 import {getManager} from 'system/selectors/state';
 import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
 import {AccountManager, AccountManagerRegistration} from 'apps/AccountManager/registration';
 import { NetworkManager, NetworkManagerRegistration } from './NetworkManager/registration';
-
-export interface AppsElectronStore extends UniversityElectronStore, SpeedTestElectronStore {}
+import { AppDispatch } from 'system/types';
+import { useEffect } from 'react';
+import { setActiveApp } from 'system/store/manager';
+export interface AppsElectronStore extends DatabaseManagerElectronStore {}
 
 export const appReducers = {
-  university: UniversityRegistration.reducer!,
-  speedTest: SpeedTestRegistration.reducer!,
+  databaseManager: DatabaseManagerRegistration.reducer!,
 };
 
 export const appRegistrations: AppRegistration[] = [ 
   AccountManagerRegistration,
   NetworkManagerRegistration,
-  UniversityRegistration,
-  SpeedTestRegistration
+  DatabaseManagerRegistration,
 ];
 
 export const appRouters: AppDataHandlers = {
-  university: UniversityRegistration.router!,
+  //university: UniversityRegistration.router!,
 };
 
 export const Apps: SFC = () => {
   const {activeApp} = useSelector(getManager);
 
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (!activeApp) {
+      dispatch(setActiveApp(DatabaseManagerRegistration.appId));
+    }
+  }, [activeApp, dispatch]);
+  //set DatabaseManager as default
   return (
     <>
+      <DatabaseManager display={activeApp === DatabaseManagerRegistration.appId} />
       <NetworkManager display={activeApp === NetworkManagerRegistration.appId} />
       <AccountManager display={activeApp === AccountManagerRegistration.appId} />
-      <University display={activeApp === UniversityRegistration.appId} />
-      <SpeedTest display={activeApp === SpeedTestRegistration.appId} />
     </>
   );
 };

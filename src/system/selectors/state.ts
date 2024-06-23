@@ -12,3 +12,5 @@ export const getPeerRequestManager = (state: RootState) => state.system.peerRequ
 export const getSelf = (state: RootState) => state.system.self;
 export const getSocketStatuses = (state: RootState) => state.system.socketStatuses;
 export const getStoreLoaded = (state: RootState) => state.system.internal.storeLoaded;
+
+//export const getDatabaseConfig = (state: RootState) => state.system.databaseConfig;

@@ -25,8 +25,8 @@ export interface AppProps {
 
 export interface AppRegistration {
   appId: string;
-  icon: string;
-  iconType: AppIconType;
+  icon?: string;
+  iconType?: AppIconType;
   initializer?: (dispatch: AppDispatch, store: LocalElectronStore) => void;
   isSystemApp: boolean;
   reducer?: Reducer;
