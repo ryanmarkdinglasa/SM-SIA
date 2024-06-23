@@ -2,8 +2,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import {DatabaseManager, DatabaseManagerElectronStore, DatabaseManagerRegistration} from 'apps/DatabaseManager/registration';
 import {getManager} from 'system/selectors/state';
 import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
-import {AccountManager, AccountManagerRegistration} from 'apps/AccountManager/registration';
-import { NetworkManager, NetworkManagerRegistration } from './NetworkManager/registration';
 import { AppDispatch } from 'system/types';
 import { useEffect } from 'react';
 import { setActiveApp } from 'system/store/manager';
@@ -14,8 +12,6 @@ export const appReducers = {
 };
 
 export const appRegistrations: AppRegistration[] = [ 
-  AccountManagerRegistration,
-  NetworkManagerRegistration,
   DatabaseManagerRegistration,
 ];
 
@@ -37,8 +33,6 @@ export const Apps: SFC = () => {
   return (
     <>
       <DatabaseManager display={activeApp === DatabaseManagerRegistration.appId} />
-      <NetworkManager display={activeApp === NetworkManagerRegistration.appId} />
-      <AccountManager display={activeApp === AccountManagerRegistration.appId} />
     </>
   );
 };

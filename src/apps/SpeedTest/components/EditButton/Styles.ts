@@ -10,11 +10,5 @@ export const Icon = styled(UMdiIcon)`
   color: ${colors.slateGray};
   margin-right: -4px;
   padding: 4px;
-  transition: all 0.15s;
-
-  &:hover {
-    background: ${colors.icon.hoverBackground};
-    color: ${colors.icon.hoverColor};
-    cursor: pointer;
-  }
+  border: 1px solid red;
 `;

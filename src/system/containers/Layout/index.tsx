@@ -22,7 +22,6 @@ const Layout: SFC = ({className}) => {
     <S.Container className={className}>
       {renderWebSockets()}
       <S.MainArea />
-      <S.Toolbar />
     </S.Container>
   );
 };

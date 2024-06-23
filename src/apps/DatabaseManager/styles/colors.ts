@@ -1,7 +1,9 @@
 export const colors = {
+    primary: '#32394e',
     charcoal: '#32394e',
     gunMetal: '#2a3042',
     slateGray: '#74788d',
+    white:  '#FFFFFF',
     fonts: {
       bright: '#f6f6f6',
       default: '#a6b0cf',
