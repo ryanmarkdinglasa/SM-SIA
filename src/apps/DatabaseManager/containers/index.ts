@@ -1,4 +1,4 @@
 export * from './MainContainer';
-export * from './CardFooter';
-export * from './CardHeader';
-export * from './CardBody';
+export * from '../components/Card/CardFooter';
+export * from '../components/Card/CardHeader';
+export * from '../components/Card/CardBody';

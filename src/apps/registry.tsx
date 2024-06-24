@@ -5,6 +5,7 @@ import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
 import { AppDispatch } from 'system/types';
 import { useEffect } from 'react';
 import { setActiveApp } from 'system/store/manager';
+
 export interface AppsElectronStore extends DatabaseManagerElectronStore {}
 
 export const appReducers = {

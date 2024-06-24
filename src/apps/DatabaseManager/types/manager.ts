@@ -1,3 +1,5 @@
+import { Config } from 'apps/DatabaseManager/types/config';
+
 export interface Manager {
-    activeDatabaseConfig: JSON | null;
+    activeDatabaseConfig: Config | null;
 }

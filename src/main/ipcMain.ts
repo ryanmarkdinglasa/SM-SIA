@@ -6,6 +6,9 @@ import {getFailChannel, getSuccessChannel} from '../shared/utils/ipc';
 import MainWindow from './MainWindow';
 import Store from './Store';
 
+//import { DatabaseConnection, Connection } from './functions/connection';
+//import { ConnectionPool } from 'mssql';
+
 ipcMain.on(IpcChannel.clearStore, (event) => {
   try {
     Store.clear();
@@ -110,3 +113,23 @@ ipcMain.on(IpcChannel.setStoreValue, (event, {key, state}: SetStoreValuePayload<
     event.reply(getFailChannel(IpcChannel.setStoreValue), error.toString());
   }
 });
+
+/*
+ipcMain.on(IpcChannel.databaseConnect, async (event, {key}: SetStoreValuePayload<keyof LocalElectronStore>) => {
+  try {
+    let pool: ConnectionPool | null = null;
+    let isConnected = false;
+    const config = Store.get(key);
+    const connectionResult: DatabaseConnection = await Connection(config);
+    pool = connectionResult.pool;
+    isConnected = connectionResult.isConnected;
+    if (!isConnected) { 
+        console.log(`DatabaseError: Database is not connected`);
+        event.reply(getFailChannel(IpcChannel.databaseConnect), `DatabaseError: Database is not connected`.toString());
+    }
+    event.reply(getSuccessChannel(IpcChannel.databaseConnect));
+  } catch (error: any) {
+    console.log(`Failed to set Store of key ${key}`, error);
+    event.reply(getFailChannel(IpcChannel.databaseConnect), error.toString());
+  }
+});*/

@@ -35,8 +35,15 @@ const send = (channel: string, payload: any) => {
   }
 };
 
+const get = (channel: string, func: any) => {
+  if (validChannels.includes(channel)) {
+    ipcRenderer.invoke(channel,(_: any, ...args: any) => func(...args));
+  }
+};
+
 export const ipcApi: IpcApi = {
   on,
   removeListener,
   send,
+  get,
 };

@@ -1,6 +1,6 @@
-import {SignKeyPair} from 'tweetnacl';
+import { SignKeyPair } from 'tweetnacl';
 
-import {VerifySignatureParams} from './signing';
+import { VerifySignatureParams } from './signing';
 
 export interface KeyPairDetails {
   publicKey: Uint8Array;

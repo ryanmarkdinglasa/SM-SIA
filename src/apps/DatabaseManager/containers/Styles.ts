@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { colors} from 'apps/DatabaseManager/styles';
 
 export const Container = styled.div`
-    height:60%;
+    height:80%;
     width:40%;
     background:${colors.white};
     display: flex;
