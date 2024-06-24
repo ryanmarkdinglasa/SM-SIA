@@ -5,3 +5,11 @@ export interface Config {
     password: string;
     port: number;
   }
+
+export const initialValues: Config = {
+  server: '',
+  name: '',
+  user: '',
+  password: '',
+  port: 0,
+};

@@ -5,7 +5,8 @@ export const CardFooter: SFC = ({className}) => {
     return (
         <>
             <S.Container className={className}>
-                Card Footer
+                <S.Span> 2024 @ Cebu Innosoft Solution Services Inc.</S.Span>
+                <S.Span> Innosoft SIA v1.0</S.Span>
             </S.Container>
         </>
     );

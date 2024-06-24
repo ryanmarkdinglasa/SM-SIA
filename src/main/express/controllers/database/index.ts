@@ -14,7 +14,7 @@ export const DBConnection = async (req: any, res: any) => {
                 trustedConnection: true,
                 encrypt: false,
                 instanceName: 'MSSQLSERVER',
-                trustServerCertificate:true
+                trustServerCertificate:true // only include this if using MSSQL Server 2019/2022
             },
             port: conf.port
         }

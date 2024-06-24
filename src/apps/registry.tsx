@@ -25,6 +25,7 @@ export const Apps: SFC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
+    
     if (!activeApp) {
       dispatch(setActiveApp(DatabaseManagerRegistration.appId));
     }

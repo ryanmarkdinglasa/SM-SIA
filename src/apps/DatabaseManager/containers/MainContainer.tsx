@@ -1,6 +1,6 @@
 import AppWindow from 'system/components/AppWindow';
 import {AppProps, SFC} from 'system/types';
-import { CardHeader, CardBody, CardFooter } from '.';
+import { Content } from './content';
 
 import * as S from './Styles';
 
@@ -9,9 +9,7 @@ export const DatabaseManager: SFC<AppProps> = ({className, display}) => {
         <>
             <AppWindow className={className} display={display}>
                 <S.Container>
-                    <CardHeader/>
-                    <CardBody/>
-                    <CardFooter/>
+                    <Content/>
                 </S.Container>
             </AppWindow>
         </>
