@@ -4,10 +4,8 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
 import { token } from '../../shared';
 import jwt from 'jsonwebtoken';
-
 /**
  * Creates a new token
  * @param {number} User - User Id
@@ -22,7 +20,6 @@ export const generateToken = async (User: number = 0): Promise<string> => {
         return 'null';
     }
 }
-
 /**
  * Creates a new token
  * @param {number} User - User Id

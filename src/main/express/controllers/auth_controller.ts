@@ -8,7 +8,7 @@
 
 import { LoginSchema } from '../schemas';
 import { ERROR, SUCCESS, CustomRequest } from '../shared'
-import { getUserByUsername, comparePassword, generateToken, generateRefreshToken, getUserPermissions } from '../functions';
+import { getUserByUsername, comparePassword, generateToken, generateRefreshToken } from '../functions';
 import { Response } from 'express';
 
 export const login = async (req:CustomRequest, res:Response) => {
@@ -26,12 +26,8 @@ export const login = async (req:CustomRequest, res:Response) => {
 
     const accessToken = await generateToken(user.Id);
     const refreshToken = await generateRefreshToken(user.Id);
-    const permissions = await getUserPermissions(user.RoleId);
     
     return res
-        .cookie("accessToken", accessToken, { httpOnly: true, })
-        .cookie("refreshToken", refreshToken, { httpOnly: true, sameSite: "strict",})
-        .cookie("permissions", permissions, { httpOnly: true, sameSite: "strict",})
         .header('Authorization', `Bearer ${accessToken}`)
         .header('Refresh-Token', refreshToken)
         .json({
@@ -46,12 +42,10 @@ export const login = async (req:CustomRequest, res:Response) => {
     }
 };
 
-export const test_token = async (req:CustomRequest, res:Response) => {
+export const test_token = async (req:CustomRequest, res:Response): Promise<any> => {
     try {
-        //const accessToken = req.headers['authorization'];
-        //const refreshToken = req.headers['refresh-token'];
-        const accessToken = req.cookies.accessToken;
-        const refreshToken = req.cookies.refreshToken;
+        const accessToken = req.headers['authorization'];
+        const refreshToken = req.headers['refresh-token'];
         return res.status(200).json({ accessToken: accessToken, refreshToken: refreshToken });
     } catch (error) {
         console.error("Error test tokens:", error);
@@ -61,9 +55,8 @@ export const test_token = async (req:CustomRequest, res:Response) => {
 
 export const logout = async (req:CustomRequest, res:Response) => {
     try {
-        res.clearCookie("accessToken");
-        res.clearCookie("refreshToken");
-        res.clearCookie("permissions");
+        req.headers['refresh-token'] = '';
+        req.headers['authorization'] = '';
         return res.status(200).json({ success: true, message: SUCCESS.s00x00 });
     } catch (error:any) {
         console.error('Error in login function:', error.message);
@@ -71,7 +64,7 @@ export const logout = async (req:CustomRequest, res:Response) => {
     }
 };
 
-export const refresh_token = async (req:CustomRequest, res:Response) => {
+export const refresh_token = async (req:CustomRequest, res:Response): Promise<any> => {
     try {
         const user = req.user;
         const accessToken = await generateToken(user);

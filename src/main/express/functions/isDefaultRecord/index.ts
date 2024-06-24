@@ -4,9 +4,7 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
 import { DEFAULT } from '../../shared';
-
 /**
  * Check if the record is default
  * @param {number} Id - Record Id

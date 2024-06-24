@@ -4,9 +4,7 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
 import { Get } from '../../models'
-
 /**
  * Generate a 6 number code
  * @param {String} Table - Database table

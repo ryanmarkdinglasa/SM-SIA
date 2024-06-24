@@ -337,7 +337,13 @@
   "express": "^4.19.2",
   
     
+  "express-validator": "^7.1.0",
+  
+    
   "formik": "^2.2.9",
+  
+    
+  "jsonwebtoken": "^9.0.2",
   
     
   "lodash-es": "^4.17.21",
@@ -428,6 +434,9 @@
   
     
   "@types/jest": "^28.1.7",
+  
+    
+  "@types/jsonwebtoken": "^9.0.6",
   
     
   "@types/lodash-es": "^4.17.6",

@@ -14,22 +14,17 @@ export interface Config extends MSSQLConfig {
     port?: number; // port is optional, use '?' to denote optional properties
 }
   
-  export interface DatabaseConnection {
-      pool: ConnectionPool;
-      isConnected: boolean;
-  }
+export interface DatabaseConnection {
+    pool: ConnectionPool;
+    isConnected: boolean;
+}
   
   export const Connection = async (config: Config): Promise<DatabaseConnection> => {
       try {
           const pool = await new ConnectionPool(config).connect();
-          pool.setMaxListeners(15); // Example: Adjust as per your application's needs
-  
-          // Check the database connection by executing a simple query
+          pool.setMaxListeners(15);
           const result = await pool.request().query('SELECT 1 AS Result');
-  
-          // Check if the query returned a result
           const isConnected = result.recordset.length > 0;
-  
           return { pool, isConnected };
       } catch (error:any) {
           throw new Error(`Database connection error: ${error.message}`);
@@ -37,7 +32,6 @@ export interface Config extends MSSQLConfig {
   };
 
 /*
-
 // Database configuration
 export const config: Config = {
     user: 'sa',
