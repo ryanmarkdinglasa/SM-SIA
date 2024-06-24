@@ -13,7 +13,7 @@ import { app } from 'electron';
 import { isDevelopment } from '../shared/utils/environment';
 import MainWindow from './MainWindow';
 import './ipcMain';
-import appExpress from '../express';
+import appExpress from './express';
 
 const port = 3500;
 

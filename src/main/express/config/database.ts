@@ -1,6 +1,6 @@
 import { ConnectionPool, config as MSSQLConfig } from 'mssql';
- 
-  export interface Config extends MSSQLConfig {
+
+export interface Config extends MSSQLConfig {
     user: string;
     password: string;
     server: string;
@@ -9,6 +9,7 @@ import { ConnectionPool, config as MSSQLConfig } from 'mssql';
         trustedConnection: boolean;
         encrypt: boolean;
         instanceName?: string; // instanceName is optional, use '?' to denote optional properties
+        trustServerCertificate?:boolean;
     };
     port?: number; // port is optional, use '?' to denote optional properties
 }

@@ -14,6 +14,7 @@ export const DBConnection = async (req: any, res: any) => {
                 trustedConnection: true,
                 encrypt: false,
                 instanceName: 'MSSQLSERVER',
+                trustServerCertificate:true
             },
             port: conf.port
         }
