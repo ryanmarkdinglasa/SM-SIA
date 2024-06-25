@@ -17,10 +17,10 @@ export const getKey = async (_req: Request, res: Response): Promise<any> => {
 
 export const validate = async (req: Request, res: Response): Promise<any> => {
     try {
-        const { license } = req.body;
-        if (!license) return res.status(400).json({ isLicense: false, message: 'License key is missing'});
-        if (license.length < 1) return { isLicense: false, message: 'License key is null or undefined'}
-        const licenseValidation = await validateLicense(license);
+        const license:any = req.body;
+        if (!license.license) return res.status(400).json({ isLicense: false, message: 'License key is missing'});
+        if (license.license.length < 1) return { isLicense: false, message: 'License key is null or undefined'}
+        const licenseValidation = await validateLicense(license.license);
         if (!licenseValidation.isValidated) return res.status(400).json({ isLicense: false, message: licenseValidation.message });
         return res.status(200).json({ isLicense: true, message: licenseValidation.message });
     } catch (error: any) {

@@ -6,7 +6,10 @@ export const Container = styled.div`
   background: #fff;
   color: ${colors.fonts.default};
   display: flex;
-  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  width:100vw;
+  height:100vh;
 `;
 
 export const MainContent = styled.div`

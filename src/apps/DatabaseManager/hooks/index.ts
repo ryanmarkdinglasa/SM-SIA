@@ -1,1 +1,1 @@
-export * from './useIsConnected';
+export * from './useWindowRender';

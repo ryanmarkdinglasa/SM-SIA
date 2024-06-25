@@ -42,6 +42,6 @@ const manager = createSlice({
     },
 });
 
-export const  { setActiveDatabaseConfig,setActiveLicense,setActiveKey, setManager} = manager.actions;
+export const  { setActiveDatabaseConfig,setActiveLicense,setActiveKey, setActivePage, setActiveUser, setManager} = manager.actions;
 
 export default manager.reducer;

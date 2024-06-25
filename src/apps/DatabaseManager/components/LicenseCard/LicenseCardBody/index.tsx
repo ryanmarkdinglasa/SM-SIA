@@ -4,13 +4,14 @@ import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
 import { displayToast } from 'system/utils/toast';
-import { setActiveLicense } from 'apps/DatabaseManager/store/manager';
+import { setActiveLicense, setActivePage } from 'apps/DatabaseManager/store/manager';
 import * as yup from 'yup';  // corrected import
 import { Input } from '../../FormElements/Input';
 import { ButtonType, ButtonColor } from '../../Button/types';
 import axios from 'axios';
 import { baseUrl } from '../../../routes';
 import { Key } from '../..';
+import { Page } from 'apps/DatabaseManager/types';
 
 export const LicenseCardBody: SFC = ({ className }) => { 
     const dispatch = useDispatch<AppDispatch>();
@@ -32,6 +33,7 @@ export const LicenseCardBody: SFC = ({ className }) => {
             });
             
             if (response.data.isLicense) {
+                dispatch(setActivePage(Page.dashboard));
                 dispatch(setActiveLicense(data.license));
                 displayToast(response.data.message, ToastType.success);
             } else {

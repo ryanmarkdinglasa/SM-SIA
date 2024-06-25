@@ -6,7 +6,7 @@ import {getActivePage} from '../../selectors/state';
 import { Page } from '../../types';
 import {SFC} from 'system/types';
 import * as S from './Styles';
-import { DBConfigContent, LicenseContent, Dashboard } from '../../pages';
+import { DBConfigContent, LicenseContent, Dashboard, Login } from '../../pages';
 
 type PageDict = {
   [key in Page]: ReactNode;
@@ -20,6 +20,7 @@ export const Renderer: SFC = ({className}) => {
       [Page.databaseConfig]: <DBConfigContent />,
       [Page.license]: <LicenseContent />,
       [Page.dashboard]: <Dashboard />,
+      [Page.login]: <Login />,
     };
 
     return pages[activePage];
@@ -27,7 +28,7 @@ export const Renderer: SFC = ({className}) => {
 
   return (
     <S.Container className={className}>
-      <S.MainContent>{renderActivePage()}</S.MainContent>
+      {renderActivePage()}
     </S.Container>
   );
 };
