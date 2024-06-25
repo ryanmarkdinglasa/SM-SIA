@@ -1,12 +1,18 @@
-import { SFC} from 'system/types';
+import { AppDispatch, SFC, ToastType} from 'system/types';
 import * as S from './Styles';
 import { Form, Formik } from 'formik';
-import { Button, ButtonColor, ButtonType, Input } from 'apps/DatabaseManager/components';
+import { ButtonColor, ButtonType, Input } from 'apps/DatabaseManager/components';
 import { useMemo } from 'react';
 import yup from 'system/utils/yup';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { baseUrl } from 'apps/DatabaseManager/routes';
+import { displayToast } from 'system/utils/toast';
+import { setActiveUser } from 'apps/DatabaseManager/store/manager';
 
 export const Login: SFC = ({className}) => {
-
+    const dispatch = useDispatch<AppDispatch>();
+    
     const initialValues = {
         UserName: '',
         Password: '',
@@ -15,10 +21,26 @@ export const Login: SFC = ({className}) => {
     type FormValues = typeof initialValues;
     
     const handleSubmit = async (values: FormValues) => { // make the function async
+        
         const data = {
             UserName: values.UserName,
             Password: values.Password,
         };
+
+        try {
+            const response = await axios.post(`${baseUrl}/auth/login`, data, {
+                withCredentials: true,
+            });
+
+            if (response.data.isLogin) {
+                dispatch(setActiveUser(null));
+            } else {
+                displayToast('Username or Password is incorrect!', ToastType.error);
+            }
+        } catch (error) {
+            dispatch(setActiveUser(null));
+            displayToast('Something went wrong!', ToastType.error);
+        }
     }
     const validationSchema = useMemo(() => {
         return yup.object().shape({
