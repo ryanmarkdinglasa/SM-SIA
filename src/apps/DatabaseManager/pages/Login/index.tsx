@@ -8,7 +8,8 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { baseUrl } from 'apps/DatabaseManager/routes';
 import { displayToast } from 'system/utils/toast';
-import { setActiveUser } from 'apps/DatabaseManager/store/manager';
+import { setActiveUser, setActiveToken, setActivePage } from 'apps/DatabaseManager/store/manager';
+import { Page } from 'apps/DatabaseManager/types';
 
 export const Login: SFC = ({className}) => {
     const dispatch = useDispatch<AppDispatch>();
@@ -33,12 +34,17 @@ export const Login: SFC = ({className}) => {
             });
 
             if (response.data.isLogin) {
-                dispatch(setActiveUser(null));
+                dispatch(setActiveUser(response.data.user));
+                dispatch(setActiveToken(response.data.accessToken));
+                dispatch(setActivePage(Page.dashboard));
             } else {
-                displayToast('Username or Password is incorrect!', ToastType.error);
+                dispatch(setActiveUser(null));
+                dispatch(setActiveToken(null));
+                displayToast(response.data.message, ToastType.error);
             }
         } catch (error) {
             dispatch(setActiveUser(null));
+            dispatch(setActiveToken(null));
             displayToast('Something went wrong!', ToastType.error);
         }
     }

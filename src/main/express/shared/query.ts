@@ -26,16 +26,16 @@ export const QUERY = {
 
     // PermissionQueries    
     "q09x001":"SELECT [Permission].* FROM [dbo].[Permission] LEFT JOIN [dbo].[User] ON [User].[RoleId] = [Permission].[RoleId] WHERE [User].[Id] = @UserId",
-    "q09x002":"SELECT [Id] FROM [dbo].[Permission] WHERE [Id] <> @Id AND [RoleId] = @RoleId AND [AccessRightId] = @AccessRightId",
+    "q09x002":"SELECT [Id] FROM [Permission] WHERE [Id] <> @Id AND [RoleId] = @RoleId AND [AccessRightId] = @AccessRightId",
     
     // RoleQueries  
-    "q010x001":"SELECT [AccessRightId] FROM [dbo].[Permission] WHERE RoleId = @RoleId",
+    "q010x001":"SELECT [AccessRightId] FROM [Permission] WHERE RoleId = @RoleId",
     
     // UserQueries  
-    "q014x001":"SELECT * FROM [dbo].[AuditTrail] WHERE UserId = @UserId",
-    "q014x002":"SELECT * FROM [dbo].[User] WHERE Username = @Username",
-    "q014x003":"SELECT [Username] FROM [dbo].[User] WHERE Username = @Username AND Id <> @Id",
-    "q014x004":"SELECT * FROM [dbo].[User] WHERE IsDeleted = 0",
+    "q014x001":"SELECT * FROM [AuditTrail] WHERE UserId = @UserId",
+    "q014x002":"SELECT * FROM [User] WHERE Username = @Username",
+    "q014x003":"SELECT [Username] FROM [User] WHERE Username = @Username AND Id <> @Id",
+    "q014x004":"SELECT * FROM [User] WHERE IsDeleted = 0",
     "":""
 }
 

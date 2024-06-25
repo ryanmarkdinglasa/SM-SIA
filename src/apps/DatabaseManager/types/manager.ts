@@ -7,4 +7,5 @@ export interface Manager {
     activeLicense: string | null;
     activePage: Page;
     activeUser: User | null;
+    activeToken: string | null;
 }

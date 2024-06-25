@@ -3,6 +3,7 @@ import {AppProps, SFC} from 'system/types';
 import { Renderer } from '.';
 import { useWindowRender } from '../hooks';
 import * as S from './Styles';
+import { Dashboard } from '../pages';
 export const DatabaseManager: SFC<AppProps> = ({className, display}) => {
     useWindowRender();
 
@@ -10,7 +11,7 @@ export const DatabaseManager: SFC<AppProps> = ({className, display}) => {
         <>
             <AppWindow className={className} display={display}>
                 <S.Container>
-                    <Renderer />
+                    <Dashboard />
                 </S.Container>
             </AppWindow>
         </>

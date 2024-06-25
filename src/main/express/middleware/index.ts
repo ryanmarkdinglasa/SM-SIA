@@ -12,8 +12,8 @@ import jwt from 'jsonwebtoken';
 class Middleware {
 
   verifyToken(req: CustomRequest, res: Response, next: NextFunction):any {
-    const accessToken = req.cookies.accessToken;
-    const refreshToken = req.cookies.refreshToken;
+    const accessToken: any = req.headers.authorization;
+    const refreshToken: any = req.headers["refresh-token"];
     if (!accessToken) return res.status(401).json({ valid: false, message: ERROR.e00x21 });
     jwt.verify(accessToken, token.SECRET, (error: any, user: any):any => {
       if (error) return this.refresh(req, res, next);
@@ -25,7 +25,7 @@ class Middleware {
   }
 
   refresh = (req: CustomRequest, res: Response, next: NextFunction):any => {
-    const refreshToken = req.cookies.refreshToken;
+    const refreshToken : any = req.headers["refresh-token"];
     if (!refreshToken) return res.status(403).json({ valid: false, message: ERROR.e00x22 });
     jwt.verify(refreshToken, token.REFRESH, (error: any, user: any): any => {
       if (error) return res.status(401).json({ valid: false, message: ERROR.e00x21 });

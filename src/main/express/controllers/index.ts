@@ -2,3 +2,4 @@
 //export * from './setup/index.js';
 export * from './database';
 export * from './license';
+export * from './auth';

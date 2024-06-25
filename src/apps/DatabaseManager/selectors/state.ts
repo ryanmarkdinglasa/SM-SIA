@@ -6,3 +6,4 @@ export const getActivePage= (state: RootState): Page => state.databaseManager.ma
 export const getActiveKey = (state: RootState): string | null => state.databaseManager.manager.activeKey;
 export const getActiveLicense = (state: RootState): string | null => state.databaseManager.manager.activeLicense;
 export const getActiveUser = (state: RootState): User | null => state.databaseManager.manager.activeUser;
+export const getActiveToken = (state: RootState): User | null => state.databaseManager.manager.activeToken;

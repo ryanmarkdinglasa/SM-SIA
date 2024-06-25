@@ -12,12 +12,17 @@ export const initialState: Manager = {
     activeLicense: null,
     activePage: Page.databaseConfig,
     activeUser: null,
+    activeToken: null,
 }
 
 const manager = createSlice({
     name:DATABASE_MANAGER,
     initialState,
     reducers:{
+        setActiveToken: ( state: Manager, { payload: activeToken }: PayloadAction<string | null>) => {
+            state.activeToken = activeToken;
+            window.electron.ipc.send(IpcChannel.setStoreValue, { key: DATABASE_MANAGER, state: current(state) });
+        },
         setActivePage: ( state: Manager, { payload: activePage }: PayloadAction<Page>) => {
             state.activePage = activePage;
             window.electron.ipc.send(IpcChannel.setStoreValue, { key: DATABASE_MANAGER, state: current(state) });
@@ -42,6 +47,6 @@ const manager = createSlice({
     },
 });
 
-export const  { setActiveDatabaseConfig,setActiveLicense,setActiveKey, setActivePage, setActiveUser, setManager} = manager.actions;
+export const  { setActiveDatabaseConfig,setActiveLicense,setActiveKey, setActivePage, setActiveUser,setActiveToken, setManager} = manager.actions;
 
 export default manager.reducer;
