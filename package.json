@@ -57,10 +57,10 @@
   "build": {
   
     
-  "productName": "innosoft_sm_sia",
+  "productName": "innosoft_sia",
   
     
-  "appId": "com.innosoft.sm_sia",
+  "appId": "com.innosoft.sia",
   
     
   "asar": true,
@@ -720,7 +720,7 @@
   
   "main": "./src/main/main.ts",
   
-  "name": "innosoft_sm_sia",
+  "name": "innosoft_sia",
   
   "repository": {
   
