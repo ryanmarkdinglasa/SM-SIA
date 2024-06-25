@@ -1,4 +1,4 @@
-import { generateCode } from '.'
+//import { generateCode } from '.'
 
 export const test_generateCode = async () => {
     try {

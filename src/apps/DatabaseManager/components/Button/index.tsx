@@ -4,6 +4,7 @@ import Loader from 'system/components/Loader';
 import {SFC} from 'system/types';
 import * as S from './Styles';
 import {ButtonColor, ButtonType} from './types';
+import { colors } from '../../styles';
 
 export interface ButtonProps {
   color?: ButtonColor;
@@ -42,7 +43,7 @@ export const Button: SFC<ButtonProps> = ({
 
   const renderButtonContent = () => (
     <>
-      {iconLeft ? <S.IconLeft color="white" path={iconLeft} size="18px" /> : null}
+      {iconLeft ? <S.IconLeft color={colors.primary} path={iconLeft} size="20px" /> : null}
       {text}
       {iconRight ? <S.IconRight color="white" path={iconRight} size="18px" /> : null}
     </>

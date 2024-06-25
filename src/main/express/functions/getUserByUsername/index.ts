@@ -4,7 +4,6 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
 import { NVarChar }  from 'mssql'; 
 import { Get } from '../../models'
 import { QUERY } from '../../shared'; 
@@ -14,10 +13,9 @@ import { QUERY } from '../../shared';
  * @param {String} Username - Username of a user
  * @returns {Promise<JSON>} - returns a data of a user
 */
-
 export const getUserByUsername = async (Username: string = ''): Promise<any> => {
     try{
-        if (!Username || Username === undefined) return [];
+        if (typeof Username !== 'string' || !Username) return [];
         const user = await Get.recordByFields(QUERY.q014x002, ['Username'], [NVarChar(255)], [Username]);
         if (!user) return [];
         return user[0];

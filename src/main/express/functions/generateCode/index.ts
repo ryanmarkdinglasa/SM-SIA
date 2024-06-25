@@ -12,14 +12,14 @@ import { Get } from '../../models'
  */
 export const generateCode = async (Table: string = ''): Promise<string> => {
     try {
-        if (!Table) return 'null';
+        if (typeof Table !== 'string' || !Table) return '';
         const latest = await Get.recordByQuery(`SELECT MAX([Code]) AS Code FROM [dbo].[${Table}]`);
         const code = String(parseInt(latest[0].Code || 0, 10) + 1).padStart( 6, "0" );
-        if (!code) return 'null';
+        if (!code) return '';
         return code;
     } catch (error:any) {
         console.log('Error in generateCode function:', error.message);
-        return 'null';
+        return '';
     }
 };  // END HERE
 

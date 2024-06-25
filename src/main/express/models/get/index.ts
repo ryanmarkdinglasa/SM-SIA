@@ -7,9 +7,8 @@
 
 import { Connection as conn } from '../../config/database';
 import { Int } from 'mssql';
-import { getConfig } from 'system/selectors/state';
+import { getConfig } from '../../../../system/selectors/state';
 import { useSelector } from 'react-redux';
-
 
 export class Get {
 

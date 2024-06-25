@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Button as UButton} from '../../';
+import {Button as UButton} from '../../Button';
 
 export const Container = styled.div`
     width:100%;

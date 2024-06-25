@@ -74,9 +74,10 @@ export const CardBody: SFC = ({ className }) => {
                         <Input errors={errors} type="text" label="Server" name="server" touched={touched} />
                         <Input errors={errors} type="text" label="Name" name="name" touched={touched} />
                         <Input errors={errors} type="text" label="User" name="user" touched={touched} />
-                        <Input errors={errors} type="password" label="Password" name="password" touched={touched} type='password' />
+                        <Input errors={errors} type="password" label="Password" name="password" touched={touched} />
                         <Input errors={errors} type="number" label="Port" name="port" touched={touched} />
                         <S.Button
+                            className={"width:100% !important;"}
                             dirty={dirty}
                             disabled={isSubmitting}
                             isSubmitting={isSubmitting}

@@ -10,6 +10,4 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
-export const Span = styled.span`
-
-`;
+export const Span = styled.span``;

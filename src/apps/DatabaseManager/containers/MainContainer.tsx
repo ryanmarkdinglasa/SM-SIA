@@ -1,6 +1,6 @@
 import AppWindow from 'system/components/AppWindow';
 import {AppProps, SFC} from 'system/types';
-import { Content } from './content';
+import { Renderer } from '.';
 
 import * as S from './Styles';
 
@@ -9,7 +9,7 @@ export const DatabaseManager: SFC<AppProps> = ({className, display}) => {
         <>
             <AppWindow className={className} display={display}>
                 <S.Container>
-                    <Content/>
+                    <Renderer/>
                 </S.Container>
             </AppWindow>
         </>

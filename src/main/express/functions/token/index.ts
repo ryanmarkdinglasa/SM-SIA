@@ -12,12 +12,13 @@ import jwt from 'jsonwebtoken';
  * @returns {Promise<String>} - returns a string of encrypted token
 */
 export const generateToken = async (User: number = 0): Promise<string> => {
+    let flag = '';
     try {
-        if (!User) return 'null';
+        if (isNaN(User) || typeof User !== 'number') return flag;
         return jwt.sign({ User }, token.SECRET, { expiresIn: "30m" });
-    } catch(error) {
-        console.log(' Error Functions generateToken');
-        return 'null';
+    } catch(error: any) {
+        console.log('Error Functions generateToken: Error' + error);
+        return flag;
     }
 }
 /**
@@ -26,12 +27,13 @@ export const generateToken = async (User: number = 0): Promise<string> => {
  * @returns {Promise<String>} - returns a string of encrypted token
 */
 export const generateRefreshToken = async (User: number = 0): Promise<string> => {
+    let flag = '';
     try {
-        if (!User) return 'null';
+        if (isNaN(User) || typeof User !== 'number') return flag;
         return jwt.sign({ User }, token.REFRESH, { expiresIn: "8h" });
-    } catch(error) {
-        console.log('Error Functions generateRefreshToken');
-        return 'null';
+    } catch(error: any) {
+        console.log('Error Functions generateRefreshToken : Error' + error);
+        return flag;
     }
 }
 

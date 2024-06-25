@@ -4,13 +4,13 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
+/*
 import { Int, NVarChar, DateTime }  from 'mssql';  
 import { Add } from '../../models';
 import { AuditTrailField, TABLE } from '../../shared';
 import { AuditTrailSchema } from '../../schemas';
-import { isFound } from '../find';
-
+import { isFound } from '..';
+*/
 /**
  * Logs the actions of a user
  * @param {number} UserId - Existing UserId
@@ -21,6 +21,7 @@ import { isFound } from '../find';
  * audit trail is where the transaction of each table refers to
  * audit trail cannot be deleted
 */
+/*
 export const logUserAction = async (UserId: number = 0, Action: string = '', Record: number = 0, Table: string = ''): Promise<boolean> => {
     try {
         if (!UserId || !Action || !Record || !Table ) return false;
@@ -37,3 +38,4 @@ export const logUserAction = async (UserId: number = 0, Action: string = '', Rec
 }; // END HERE
 
 export * from './test';
+*/
