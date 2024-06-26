@@ -2,6 +2,7 @@ import {useSelector} from 'react-redux';
 import orderBy from 'lodash/orderBy';
 
 import WebSocket from 'system/components/WebSocket';
+import { DraggableTopBar } from 'system/components/DraggableTopBar';
 import {useAccountOnlineStatusManager} from 'system/hooks';
 import {getNetworks} from 'system/selectors/state';
 import {SFC} from 'system/types';
@@ -20,6 +21,7 @@ const Layout: SFC = ({className}) => {
 
   return (
     <S.Container className={className}>
+      <DraggableTopBar />
       {renderWebSockets()}
       <S.MainArea />
     </S.Container>

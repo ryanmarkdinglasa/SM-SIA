@@ -29,6 +29,7 @@ export const SpanSub = styled.span`
     justify-content: end;
     width: 100%;
     padding: 0;
+    text-align: right;
 `;
 
 export const Left = styled.div`

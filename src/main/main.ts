@@ -8,13 +8,12 @@
  * When running `npm run build` or `npm run build:main`, this file is compiled to
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
-
+import { globalShortcut } from 'electron';
 import { app } from 'electron';
 import { isDevelopment } from '../shared/utils/environment';
 import MainWindow from './MainWindow';
 import './ipcMain';
 import appExpress from './express';
-
 const port = 3500;
 
 // Start the Express server
@@ -43,6 +42,7 @@ if (isDevelopment) {
 }
 
 app.on('window-all-closed', () => {
+  globalShortcut.unregisterAll();
   // Respect the OSX convention of having the application in memory even after all windows have been closed
   if (process.platform !== 'darwin') {
     app.quit();

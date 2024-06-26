@@ -1,4 +1,4 @@
-import {dialog, ipcMain, OpenDialogOptions, SaveDialogOptions} from 'electron';
+import { app, dialog, ipcMain, OpenDialogOptions, SaveDialogOptions} from 'electron';
 import fs from 'fs';
 
 import {IpcChannel, LocalElectronStore, SetStoreValuePayload} from '../shared/types';
@@ -108,5 +108,16 @@ ipcMain.on(IpcChannel.setStoreValue, (event, {key, state}: SetStoreValuePayload<
   } catch (error: any) {
     console.log(`Failed to set Store of key ${key}`, error);
     event.reply(getFailChannel(IpcChannel.setStoreValue), error.toString());
+  }
+});
+
+ipcMain.on(IpcChannel.closeApp, (event) => {
+  try {
+    app.quit();
+  } catch (error: any) {
+    console.log('Failed to restart app', error);
+    setTimeout(() => {
+      event.reply(getFailChannel(IpcChannel.restartApp), error.toString());
+    }, 1000);
   }
 });

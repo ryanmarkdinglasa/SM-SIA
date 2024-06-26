@@ -151,7 +151,7 @@ export default class MenuBuilder {
 
   buildDefaultTemplate() {
     return [
-      {
+      /*{
         label: '&File',
         submenu: [
           {
@@ -203,7 +203,7 @@ export default class MenuBuilder {
                   label: 'Toggle &Full Screen',
                 },
               ],
-      },
+      },*/
     ];
   }
 

@@ -1,12 +1,11 @@
-/* eslint global-require: off, @typescript-eslint/no-var-requires: off */
-
-import {app, BrowserWindow, shell, WebContents} from 'electron';
+import { app, BrowserWindow, shell, WebContents, globalShortcut } from 'electron';
 import path from 'path';
 
-import {GenericVoidFunction} from '../shared/types';
-import {isDevelopment} from '../shared/utils/environment';
+import { GenericVoidFunction } from '../shared/types';
+import { isDevelopment } from '../shared/utils/environment';
 import MenuBuilder from './MenuBuilder';
-import {resolveHtmlPath} from './utils';
+import { resolveHtmlPath } from './utils';
+import WindowManager from './windowManager';
 
 const installExtensions = async () => {
   const installer = require('electron-devtools-installer');
@@ -25,6 +24,7 @@ type OnEventType = 'closed' | 'ready-to-show';
 
 class MainWindow {
   private static instance: BrowserWindow | null = null;
+  private static splashWindow: BrowserWindow | null = null;
 
   public static async createWindow(): Promise<void> {
     if (isDevelopment) {
@@ -39,18 +39,48 @@ class MainWindow {
       return path.join(RESOURCES_PATH, ...paths);
     };
 
+    // Create the splash window
+    MainWindow.splashWindow = new BrowserWindow({
+      width: 400,
+      height: 300,
+      frame: false,
+      transparent: false,
+      alwaysOnTop: true,
+      webPreferences: {
+        nodeIntegration: true,
+        devTools: false
+      },
+      
+    });
+
+    MainWindow.splashWindow.loadFile(path.join(__dirname, 'loaders/testSplash.html'));
+    MainWindow.splashWindow.center();
+
+    // Create the main window
     MainWindow.set(
       new BrowserWindow({
-        height: 1080,
+        width: 1100,
+        height: 800,
         icon: getAssetPath('icon.png'),
         show: false,
+        center: true,
+        frame: false,
+        resizable: false,
+        fullscreenable: true,
+        fullscreen: false,
+        title: 'Innosoft SIA',
+        visualEffectState: 'active',
+        titleBarStyle: 'hidden',
+        trafficLightPosition: { x: 15, y: 10 },
         webPreferences: {
           preload: app.isPackaged
             ? path.join(__dirname, 'preload.js')
             : path.join(__dirname, '../../.erb/dll/preload.js'),
           sandbox: false,
+          nodeIntegration: true,
+          contextIsolation: true,
+          devTools: true,
         },
-        width: 1920,
       }),
     );
 
@@ -63,12 +93,21 @@ class MainWindow {
       if (process.env.START_MINIMIZED) {
         MainWindow.minimize();
       } else {
-        MainWindow.show();
+        setTimeout(() => {
+          MainWindow.show();
+          MainWindow.splashWindow?.close();
+        }, 1000); // 10 seconds delay
       }
     });
 
     MainWindow.on('closed', () => {
       MainWindow.set(null);
+    });
+
+    const windowManager = new WindowManager(MainWindow.instance!);
+    globalShortcut.register('Alt+Enter', () => {
+      const isFullScreen = windowManager.isFullScreen();
+      windowManager.setFullScreen(!isFullScreen);
     });
 
     const menuBuilder = new MenuBuilder(MainWindow.instance!);
@@ -77,7 +116,7 @@ class MainWindow {
     // Open urls in the user's browser
     MainWindow.getWebContents()?.setWindowOpenHandler((eventData) => {
       shell.openExternal(eventData.url);
-      return {action: 'deny'};
+      return { action: 'deny' };
     });
   }
 

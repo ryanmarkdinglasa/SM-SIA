@@ -1,15 +1,13 @@
 import { SFC} from 'system/types';
 import * as S from './Styles';
+import './Styles.css';
 
-//import { Preloader } from '../../components'
-export const Dashboard: SFC = ({className}) => {
-
+export const Preloader: SFC = ({className}) => {
     return (
-        <>
+        <>  
             <S.Container className={className}>
-              
-                Dashboard
+                <S.Span className="loader"></S.Span>
             </S.Container>
         </>
     );
-}
+};

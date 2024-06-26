@@ -46,7 +46,7 @@ export const useWindowRender = () => {
       }
     };
 
-    const pageRender = async () => {
+    const windowRender = async () => {
       let isLicensed = false;
       let isConnected = false;
 
@@ -67,6 +67,6 @@ export const useWindowRender = () => {
       }
     };
 
-    pageRender();
+    windowRender();
   }, [activeConfig, activeLicense, dispatch]);
 };

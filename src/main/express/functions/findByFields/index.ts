@@ -1,4 +1,4 @@
-import { Get } from '../../models';
+import { recordByFields } from '../../models';
 /**
  * Check if the records already exists
  * @param {string} Query - The name of the table
@@ -12,7 +12,7 @@ export const findByFields = async (Query: string = '', Field: Array<string> = []
     try {
         if (typeof Query !== 'string' || !Query) return flag;
         if (!Field || !Type || !Data || Field.length !== Type.length || Field.length !== Data.length) return flag;
-        const check = await Get.recordByFields(Query, Field, Type, Data);
+        const check = await recordByFields(Query, Field, Type, Data);
         if (check && check.length > 0) flag = true;
         return flag;
     } catch (error:any) {

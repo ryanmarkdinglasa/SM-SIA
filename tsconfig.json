@@ -10,7 +10,7 @@
     "jsx": "react-jsx",
     "lib": [
       "dom",
-      "ES6"
+      "es2021"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -23,7 +23,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES6"
+    "target": "es2021"
   },
   
   "include": [

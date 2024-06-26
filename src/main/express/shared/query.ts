@@ -33,7 +33,7 @@ export const QUERY = {
     
     // UserQueries  
     "q014x001":"SELECT * FROM [AuditTrail] WHERE UserId = @UserId",
-    "q014x002":"SELECT * FROM [User] WHERE Username = @Username",
+    "q014x002":"SELECT * FROM [MstUser] WHERE [Username] = @Username",
     "q014x003":"SELECT [Username] FROM [User] WHERE Username = @Username AND Id <> @Id",
     "q014x004":"SELECT * FROM [User] WHERE IsDeleted = 0",
     "":""

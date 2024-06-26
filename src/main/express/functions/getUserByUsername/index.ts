@@ -5,7 +5,7 @@
  * LOG-DATE     : 2024-05-27 11:48PM
 */
 import { NVarChar }  from 'mssql'; 
-import { Get } from '../../models'
+import { recordByFields } from '../../models'
 import { QUERY } from '../../shared'; 
 
 /**
@@ -16,7 +16,7 @@ import { QUERY } from '../../shared';
 export const getUserByUsername = async (Username: string = ''): Promise<any> => {
     try{
         if (typeof Username !== 'string' || !Username) return [];
-        const user = await Get.recordByFields(QUERY.q014x002, ['Username'], [NVarChar(255)], [Username]);
+        const user = await recordByFields(QUERY.q014x002, ['Username'], [NVarChar(255)], [Username]);
         if (!user) return [];
         return user[0];
     }catch(error){
@@ -27,3 +27,10 @@ export const getUserByUsername = async (Username: string = ''): Promise<any> => 
 
 // TEST CASES
 export * from './test'
+/*
+(async () => {
+    console.log('getUserByUsername TESTING');
+    //const res = await getUserByUsername('admin');
+    const res = await recordsByTable('MstUser');
+    console.log(res);
+})();*/
