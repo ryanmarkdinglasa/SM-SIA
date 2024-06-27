@@ -1,3 +1,3 @@
-import {Dict} from 'system/types/generic';
+import {Dict} from '../types/generic';
 
 export type Balances = Dict<number>;

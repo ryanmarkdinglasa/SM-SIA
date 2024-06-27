@@ -1,4 +1,4 @@
-import yup, {accountNumberSchema} from 'system/utils/yup';
+import yup, {accountNumberSchema} from '../utils/yup';
 
 const messageSchema = yup
   .object({

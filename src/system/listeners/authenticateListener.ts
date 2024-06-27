@@ -1,10 +1,10 @@
-import {fetchAccount} from 'system/core/accounts';
-import store from 'system/store';
-import {setBalance} from 'system/store/balances';
-import {setSocketStatus} from 'system/store/socketStatuses';
-import {AppDispatch, SocketDataInternal, SocketDataInternalMethod, SocketStatus} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
-import {authenticateValidator} from 'system/validators/authenticateValidators';
+import {fetchAccount} from '../core/accounts';
+import store from '../store';
+import {setBalance} from '../store/balances';
+import {setSocketStatus} from '../store/socketStatuses';
+import {AppDispatch, SocketDataInternal, SocketDataInternalMethod, SocketStatus} from '../types';
+import {displayErrorToast} from '../utils/toast';
+import {authenticateValidator} from '../validators/authenticateValidators';
 
 const authenticateListener = (dispatch: AppDispatch, networkId: string, socketData: SocketDataInternal) => {
   (async () => {

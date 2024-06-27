@@ -1,4 +1,4 @@
-import {SFC} from 'system/types';
+import {SFC} from '../../../../../system/types';
 import * as S from './Styles';
 
 export const LicenseCardFooter: SFC = ({className}) => {

@@ -11,6 +11,7 @@ const baseValidChannels = [
   IpcChannel.restartApp,
   IpcChannel.setStoreValue,
   IpcChannel.closeApp,
+  IpcChannel.setConfig,
 ];
 const failValidChannels = baseValidChannels.map(getFailChannel);
 const successValidChannels = baseValidChannels.map(getSuccessChannel);

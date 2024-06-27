@@ -18,21 +18,47 @@ export interface DatabaseConnection {
     pool: ConnectionPool;
     isConnected: boolean;
 }
-  
+
   export const Connection = async (config: Config): Promise<DatabaseConnection> => {
       try {
-          const pool = await new ConnectionPool(config).connect();
-          pool.setMaxListeners(15);
-          const result = await pool.request().query('SELECT 1 AS Result');
-          const isConnected = result.recordset.length > 0;
-          return { pool, isConnected };
+        const pool = await new ConnectionPool(config).connect();
+        pool.setMaxListeners(15);
+        const result = await pool.request().query('SELECT 1 AS Result');
+        const isConnected = result.recordset.length > 0;
+        return { pool, isConnected };
       } catch (error:any) {
           throw new Error(`Database connection error: ${error.message}`);
       }
   };
+  /*
+  export const Connected = async (): Promise<any> => {
+    try {
+        const store = new ElectronStore();
+        const data: any = store.get('database-configuration');
+        const conf: Config = {
+            user: `${data.user}`,
+            password: `${data.password}`,
+            server: `${data.server}`,
+            database: `${data.database}`,
+            options: {
+                trustedConnection: false,
+                encrypt: false,
+            },
+            port:parseInt(data.port),
+        }
+        return [conf];
+      const pool = await new ConnectionPool(conf).connect();
+      pool.setMaxListeners(15);
+      const result = await pool.request().query('SELECT 1 AS Result');
+      const isConnected = result.recordset.length > 0;
+      return { pool, isConnected };
+    } catch (error:any) {
+        throw new Error(`Database connection error: ${error.message}`);
+    }
+};*/
 
-/*
 // Database configuration
+/*
 export const config: Config = {
     user: 'sa',
     password: 'innosoft',
@@ -45,16 +71,16 @@ export const config: Config = {
     },
     port: 1433, // make sure to change port
   };
-
+*/
 // IIFE to test the connection
+/*
 (async () => {
     try {
-        const connection = await Connection(config);
-        if (connection.isConnected) {
-            console.log('Connected');
-        } else {
-            console.log('Not Connected');
-        }
+        const store = new ElectronStore();
+        const data = store.get('database-configuration');
+        //
+        console.log('config/database');
+        console.log(data);
     } catch (error) {
         console.error(`Disconnected Error: ${error}`);
     }

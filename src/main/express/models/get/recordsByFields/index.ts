@@ -1,6 +1,5 @@
 import { Connection as conn } from '../../../config/database';
-import { getConfig } from '../../../../../system/selectors/state';
-import { useSelector } from 'react-redux';
+import {CONFIGURATION} from '../../config';
 
 /**
  * Retrieves specific record from a given fields.
@@ -26,8 +25,7 @@ export const recordByFields = async (Query: string='', Field: Array<any> = [], T
             return Promise.reject(new Error(`Data for field 'field${parseInt(undefinedIndex3, 10) +1}' is undefined`));
         }
         if (Field.length !== Data.length || Field.length !== Type.length) return Promise.reject(new Error('Parameters are empty, or their lengths do not match'));
-        const config = useSelector(getConfig);
-        const pool:any = await conn(config);
+        const pool:any = (await conn(CONFIGURATION)).pool;
         if (!pool)  return Promise.reject(new Error(`Connection failed`));
         pool.setMaxListeners(15);
         const request = pool.request();

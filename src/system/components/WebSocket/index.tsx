@@ -2,11 +2,11 @@ import {useCallback, useEffect, useMemo, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
-import NetworkPeerSyncManager from 'system/components/NetworkPeerSyncManager';
-import rootRouter from 'system/routers/rootRouter';
-import {getSelf, getSocketStatuses} from 'system/selectors/state';
-import {setNetworkCorrelationId} from 'system/store/networkCorrelationIds';
-import {setSocketStatus} from 'system/store/socketStatuses';
+import NetworkPeerSyncManager from '../../components/NetworkPeerSyncManager';
+import rootRouter from '../../routers/rootRouter';
+import {getSelf, getSocketStatuses} from '../../selectors/state';
+import {setNetworkCorrelationId} from '../../store/networkCorrelationIds';
+import {setSocketStatus} from '../../store/socketStatuses';
 import {
   AppDispatch,
   AuthenticateRequest,
@@ -14,9 +14,9 @@ import {
   SFC,
   SocketDataInternalMethod,
   SocketStatus,
-} from 'system/types';
-import {getSocketAddress} from 'system/utils/addresses';
-import {getAuthToken} from 'system/utils/auth';
+} from '../../types';
+import {getSocketAddress} from '../../utils/addresses';
+import {getAuthToken} from '../../utils/auth';
 
 interface WebSocketProps {
   networkId: string;

@@ -1,9 +1,9 @@
 import {createSlice, current, PayloadAction} from '@reduxjs/toolkit';
 
 import {IpcChannel} from 'shared/types';
-import {SYSTEM_SELF} from 'system/store/constants';
-import {Self} from 'system/types';
-import {setLocalAndStateReducer} from 'system/utils/ipc';
+import {SYSTEM_SELF} from '../store/constants';
+import {Self} from '../types';
+import {setLocalAndStateReducer} from '../utils/ipc';
 
 export const initialState: Self = {
   accountNumber: '',

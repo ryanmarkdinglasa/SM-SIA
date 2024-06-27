@@ -1,10 +1,10 @@
-import authenticateListener from 'system/listeners/authenticateListener';
-import getPeersListener from 'system/listeners/getPeersListener';
-import setPeersListener from 'system/listeners/setPeersListener';
-import store from 'system/store';
-import {deleteNetworkCorrelationId} from 'system/store/networkCorrelationIds';
-import {AppDispatch, SocketDataInternal, SocketDataInternalMethod} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
+import authenticateListener from '../listeners/authenticateListener';
+import getPeersListener from '../listeners/getPeersListener';
+import setPeersListener from '../listeners/setPeersListener';
+import store from '../store';
+import {deleteNetworkCorrelationId} from '../store/networkCorrelationIds';
+import {AppDispatch, SocketDataInternal, SocketDataInternalMethod} from '../types';
+import {displayErrorToast} from '../utils/toast';
 
 const socketDataInternalRouter = (dispatch: AppDispatch, networkId: string, socketData: SocketDataInternal) => {
   const {

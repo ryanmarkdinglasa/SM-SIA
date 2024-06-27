@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import UMainArea from 'system/containers/Layout/MainArea';
-import {constants} from 'system/styles';
+import UMainArea from '../../containers/Layout/MainArea';
+import {constants} from '../../styles';
 
 export const Container = styled.div`
   display: grid;

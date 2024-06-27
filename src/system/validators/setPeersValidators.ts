@@ -1,4 +1,4 @@
-import yup from 'system/utils/yup';
+import yup from '../utils/yup';
 
 export const setPeersValidator = yup
   .object({

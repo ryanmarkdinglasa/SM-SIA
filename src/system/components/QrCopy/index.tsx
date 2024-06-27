@@ -1,8 +1,8 @@
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-import Qr from 'system/components/Qr';
-import {SFC, ToastType} from 'system/types';
-import {displayToast} from 'system/utils/toast';
+import Qr from '../../components/Qr';
+import {SFC, ToastType} from '../../types';
+import {displayToast} from '../../utils/toast';
 import * as S from './Styles';
 
 export interface QrCopyProps {

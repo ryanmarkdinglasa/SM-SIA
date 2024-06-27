@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import UIcon from '@mdi/react';
 
-import {colors} from 'system/styles';
+import {colors} from '../../styles';
 
 const disabledMixin = css`
   background: ${colors.palette.gray['200']};

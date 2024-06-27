@@ -1,4 +1,4 @@
-import store from 'system/store';
+import store from '../store';
 
 export const generateNetworkUUID = () => {
   const {

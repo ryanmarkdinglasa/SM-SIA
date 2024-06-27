@@ -1,13 +1,13 @@
 import {CSSProperties, ReactNode, useCallback, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 
-import {GenericVoidFunction} from 'shared/types';
-import Icon from 'system/components/Icon';
-import ToolbarItem from 'system/components/ToolbarItem';
+import {GenericVoidFunction} from '../../../shared/types';
+import Icon from '../../components/Icon';
+import ToolbarItem from '../../components/ToolbarItem';
 import {useEventListener, useToggle} from 'system/hooks';
-import {TOOLBAR_HEIGHT} from 'system/styles';
-import {Menu, Option} from 'system/styles/components/DropMenuStyle';
-import {SFC} from 'system/types';
+import {TOOLBAR_HEIGHT} from '../../styles';
+import {Menu, Option} from '../../styles/components/DropMenuStyle';
+import {SFC} from '../../types';
 
 export enum DropupMenuDirection {
   left,

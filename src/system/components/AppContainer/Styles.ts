@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {colors} from 'system/styles';
+import {colors} from '../../styles';
 
 export const Container = styled.div`
   background: ${colors.palette.neutral['050']};

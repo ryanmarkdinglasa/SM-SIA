@@ -30,7 +30,7 @@
     "src/apps/**/*.ts","src/apps/**/*.tsx",
     "src/shared/**/*.ts","src/shared/**/*.tsx",
     "src/express/**/*.ts",
-    "src/main/**/*.ts","src/main/**/*.tsx",
+    "src/main/**/*.ts","src/main/**/*.tsx","src/main/**/*.html",
     "src/renderer/**/*.ts",
     "src/shared/**/*.ts","src/shared/**/*.tsx",
     "src/system/**/*.ts","src/system/**/*.tsx",

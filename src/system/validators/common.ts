@@ -1,4 +1,4 @@
-import {PeerRequestManager, PeerRequestMethod, Self} from 'system/types';
+import {PeerRequestManager, PeerRequestMethod, Self} from '../types';
 
 export const validateCorrelationIdMatchesLastRequestId = (
   correlationId: string,

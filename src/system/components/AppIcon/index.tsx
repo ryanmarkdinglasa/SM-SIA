@@ -1,10 +1,10 @@
 import {useDispatch, useSelector} from 'react-redux';
 
-import Icon from 'system/components/Icon';
-import {useNotificationCount} from 'system/hooks';
-import {getManager} from 'system/selectors/state';
-import {setActiveApp} from 'system/store/manager';
-import {AppDispatch, AppIconType, SFC} from 'system/types';
+import Icon from '../../components/Icon';
+import {useNotificationCount} from '../../hooks';
+import {getManager} from '../../selectors/state';
+import {setActiveApp} from '../../store/manager';
+import {AppDispatch, AppIconType, SFC} from '../../types';
 import * as S from './Styles';
 
 export interface AppIconProps {

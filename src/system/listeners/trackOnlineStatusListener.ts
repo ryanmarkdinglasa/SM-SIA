@@ -1,12 +1,12 @@
-import store from 'system/store';
-import {setNetworkAccountOnlineStatuses} from 'system/store/networkAccountOnlineStatuses';
-import {AppDispatch, OnlineStatus, SocketDataStandard} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
+import store from '../store';
+import {setNetworkAccountOnlineStatuses} from '../store/networkAccountOnlineStatuses';
+import {AppDispatch, OnlineStatus, SocketDataStandard} from '../types';
+import {displayErrorToast} from '../utils/toast';
 import {
   trackOnlineStatusValidator,
   validateIsKnownAccount,
   validateIsNotSelfAccountNumber,
-} from 'system/validators/trackOnlineStatusValidators';
+} from '../validators/trackOnlineStatusValidators';
 
 const trackOnlineStatusListener = (dispatch: AppDispatch, networkId: string, socketData: SocketDataStandard) => {
   (async () => {

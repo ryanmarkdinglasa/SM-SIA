@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {constants} from 'system/styles';
+import {constants} from '../../styles';
 
 export const Container = styled.div`
   align-items: center;

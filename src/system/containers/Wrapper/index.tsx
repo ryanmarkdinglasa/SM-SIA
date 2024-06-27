@@ -3,17 +3,17 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Flip, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {IpcChannel, LocalElectronStore} from 'shared/types';
-import Layout from 'system/containers/Layout';
-import {useReadIpc, useToggle} from 'system/hooks';
-import {loadAppData, loadSystemData} from 'system/internal';
-import WelcomeModal from 'system/modals/WelcomeModal';
-import {getSelf, getStoreLoaded} from 'system/selectors/state';
-import {setSelf} from 'system/store/self';
-import {setStoreLoadedTrue} from 'system/store/internal';
-import {AppDispatch} from 'system/types';
-import {loadStoreFailToast} from 'system/utils/toast';
-import {generateAccount} from 'system/utils/tnb';
+import {IpcChannel, LocalElectronStore} from '../../../shared/types';
+import Layout from '../../containers/Layout';
+import {useReadIpc, useToggle} from '../../hooks';
+import {loadAppData, loadSystemData} from '../../internal';
+import WelcomeModal from '../../modals/WelcomeModal';
+import {getSelf, getStoreLoaded} from '../../selectors/state';
+import {setSelf} from '../../store/self';
+import {setStoreLoadedTrue} from '../../store/internal';
+import {AppDispatch} from '../../types';
+import {loadStoreFailToast} from '../../utils/toast';
+import {generateAccount} from '../../utils/tnb';
 
 const Wrapper: FC = () => {
   const [welcomeModalIsOpen, toggleWelcomeModal] = useToggle(false);

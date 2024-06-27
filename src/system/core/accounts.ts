@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import {CoreAccount} from 'system/types';
-import {getAddress} from 'system/utils/addresses';
+import {CoreAccount} from '../types';
+import {getAddress} from '../utils/addresses';
 
 export const fetchAccount = async (accountNumber: string, networkId: string) => {
   const address = getAddress(networkId);

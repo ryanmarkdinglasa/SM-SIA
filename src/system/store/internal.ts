@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-import {SYSTEM_INTERNAL} from 'system/store/constants';
-import {Internal} from 'system/types';
+import {SYSTEM_INTERNAL} from '../store/constants';
+import {Internal} from '../types';
 
 const initialState: Internal = {
   storeLoaded: false,

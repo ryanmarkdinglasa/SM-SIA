@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 
 import {getActivePage} from '../../selectors/state';
 import { Page } from '../../types';
-import {SFC} from 'system/types';
+import {SFC} from '../../../../system/types';
 import * as S from './Styles';
 import { DBConfigContent, LicenseContent, Dashboard, Login } from '../../pages';
 

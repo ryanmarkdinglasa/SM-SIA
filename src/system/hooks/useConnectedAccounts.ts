@@ -1,9 +1,9 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getAccountOnlineStatuses, getBalances, getNetworkAccountOnlineStatuses} from 'system/selectors/state';
-import {Dict, OnlineStatus} from 'system/types';
-import {getRecipientsDefaultNetworkId} from 'system/utils/networks';
+import {getAccountOnlineStatuses, getBalances, getNetworkAccountOnlineStatuses} from '../selectors/state';
+import {Dict, OnlineStatus} from '../types';
+import {getRecipientsDefaultNetworkId} from '../utils/networks';
 
 const useConnectedAccounts = (): Dict<string> => {
   const accountOnlineStatuses = useSelector(getAccountOnlineStatuses);

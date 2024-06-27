@@ -3,8 +3,8 @@ import {createPortal} from 'react-dom';
 import noop from 'lodash/noop';
 import {mdiClose} from '@mdi/js';
 
-import Icon from 'system/components/Icon';
-import {SFC} from 'system/types';
+import Icon from '../../components/Icon';
+import {SFC} from '../../types';
 import * as S from './Styles';
 
 export interface ModalProps {

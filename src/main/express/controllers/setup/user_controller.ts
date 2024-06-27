@@ -4,11 +4,11 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
-import { recordById } from '../../models'
-import { ERROR, SUCCESS, TABLE, CustomRequest } from '../../shared/index.js';
+import { recordsByTable } from '../../models'
+import { ERROR, SUCCESS, CustomRequest } from '../../shared';
 import { Response } from 'express';
-
+//import {getUserByUsername} from '../../functions';
+/*
 // WORKING AS EXPECTED
 export const get_user = async (req: CustomRequest, res: Response) => {
     try {
@@ -22,4 +22,18 @@ export const get_user = async (req: CustomRequest, res: Response) => {
         return res.status(500).json({ message: ERROR.e00x02});
     }
 } // END HERE
+*/
 
+// WORKING AS EXPECTED
+export const userList = async (_req: CustomRequest, res: Response) => {
+    try {
+
+        const user = await recordsByTable('MstUser');
+        //const user = (await getUserByUsername('admin'));
+        if (!user) return res.status(400).json({ message: ERROR.e00x05});
+        return res.status(200).json({ data:user, message: SUCCESS.s00x00});
+    } catch (error: any) {
+      console.error('Database connection error:', error);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+  };

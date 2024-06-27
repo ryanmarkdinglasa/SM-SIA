@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
 
-import {getAccounts, getSelf} from 'system/selectors/state';
-import {truncate} from 'system/utils/strings';
+import {getAccounts, getSelf} from '../selectors/state';
+import {truncate} from '../utils/strings';
 
 const useAccountDisplayName = (accountNumber: string, maxLength?: number) => {
   const accounts = useSelector(getAccounts);

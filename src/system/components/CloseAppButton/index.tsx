@@ -3,7 +3,6 @@ import * as S from './Styles';
 
 export const CloseAppButton = () => {
     const handleCloseClick = () => {
-        alert('are you sure you want to quit?');
         window.electron.ipc.send('close-app');
     };
   

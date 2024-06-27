@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {SYSTEM_PEER_REQUEST_MANAGER} from 'system/store/constants';
-import {PeerRequestDetails, PeerRequestManager, PeerRequestMethod} from 'system/types';
+import {SYSTEM_PEER_REQUEST_MANAGER} from '../store/constants';
+import {PeerRequestDetails, PeerRequestManager, PeerRequestMethod} from '../types';
 
 const initialPeerRequestDetails: PeerRequestDetails = {
   lastRequestDate: null,

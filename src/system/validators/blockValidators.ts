@@ -1,7 +1,7 @@
-import {appRouters} from 'apps/registry';
-import {Block} from 'shared/types';
-import {verifyBlockSignature} from 'system/utils/tnb';
-import yup, {accountNumberSchema} from 'system/utils/yup';
+import {appRouters} from '../../apps/registry';
+import {Block} from '../../shared/types';
+import {verifyBlockSignature} from '../utils/tnb';
+import yup, {accountNumberSchema} from '../utils/yup';
 
 const blockSchema: yup.SchemaOf<Block> = yup
   .object({

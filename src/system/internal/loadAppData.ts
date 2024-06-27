@@ -1,6 +1,6 @@
-import {appRegistrations} from 'apps/registry';
-import {LocalElectronStore} from 'shared/types';
-import {AppDispatch} from 'system/types';
+import {appRegistrations} from '../../apps/registry';
+import {LocalElectronStore} from '../../shared/types';
+import {AppDispatch} from '../types';
 
 const loadAppData = (dispatch: AppDispatch, store: LocalElectronStore): void => {
   for (const registration of appRegistrations) {

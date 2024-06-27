@@ -1,8 +1,8 @@
-import trackOnlineStatusListener from 'system/listeners/trackOnlineStatusListener';
-import updateAccountListener from 'system/listeners/updateAccountListener';
-import blockRouter from 'system/routers/blockRouter';
-import {AppDispatch, SocketDataStandard, SocketDataStandardType} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
+import trackOnlineStatusListener from '../listeners/trackOnlineStatusListener';
+import updateAccountListener from '../listeners/updateAccountListener';
+import blockRouter from '../routers/blockRouter';
+import {AppDispatch, SocketDataStandard, SocketDataStandardType} from '../types';
+import {displayErrorToast} from '../utils/toast';
 
 const socketDataStandardRouter = (dispatch: AppDispatch, networkId: string, socketData: SocketDataStandard) => {
   const {type} = socketData;

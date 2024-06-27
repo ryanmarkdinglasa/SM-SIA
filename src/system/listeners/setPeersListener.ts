@@ -1,9 +1,9 @@
-import store from 'system/store';
-import {setPeerRequestDetails} from 'system/store/peerRequestManager';
-import {AppDispatch, PeerRequestMethod, SocketDataInternal, SocketDataInternalMethod} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
-import {validateCorrelationIdMatchesLastRequestId} from 'system/validators/common';
-import {setPeersValidator} from 'system/validators/setPeersValidators';
+import store from '../store';
+import {setPeerRequestDetails} from '../store/peerRequestManager';
+import {AppDispatch, PeerRequestMethod, SocketDataInternal, SocketDataInternalMethod} from '../types';
+import {displayErrorToast} from '../utils/toast';
+import {validateCorrelationIdMatchesLastRequestId} from '../validators/common';
+import {setPeersValidator} from '../validators/setPeersValidators';
 
 const setPeersListener = (dispatch: AppDispatch, networkId: string, socketData: SocketDataInternal) => {
   (async () => {

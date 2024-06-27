@@ -6,8 +6,8 @@ import {
   SYSTEM_NETWORKS,
   SYSTEM_SELF,
   SYSTEM_SOCKET_STATUSES,
-} from 'system/store/constants';
-import {Accounts, Balances, Manager, NetworkBlocks, Networks, Self, SocketStatuses} from 'system/types';
+} from '../store/constants';
+import {Accounts, Balances, Manager, NetworkBlocks, Networks, Self, SocketStatuses} from '../types';
 
 export interface SystemElectronStore {
   [SYSTEM_ACCOUNTS]: Accounts;

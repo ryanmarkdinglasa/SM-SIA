@@ -1,9 +1,9 @@
 import {createSlice, current, PayloadAction} from '@reduxjs/toolkit';
 
 import {IpcChannel} from 'shared/types';
-import {SYSTEM_NETWORKS} from 'system/store/constants';
-import {Network, Networks} from 'system/types';
-import {setLocalAndStateReducer} from 'system/utils/ipc';
+import {SYSTEM_NETWORKS} from '../store/constants';
+import {Network, Networks} from '../types';
+import {setLocalAndStateReducer} from '../utils/ipc';
 
 export const initialState: Networks = {};
 

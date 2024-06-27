@@ -1,4 +1,4 @@
-import {RootState} from 'system/types';
+import {RootState} from '../types';
 
 export const getAccountOnlineStatuses = (state: RootState) => state.system.accountOnlineStatuses;
 export const getAccounts = (state: RootState) => state.system.accounts;

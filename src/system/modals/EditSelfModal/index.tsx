@@ -2,13 +2,13 @@ import {useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Form, Formik} from 'formik';
 
-import Button, {ButtonType} from 'system/components/Button';
-import {Input} from 'system/components/FormElements';
-import Modal from 'system/components/Modal';
-import {getSelf} from 'system/selectors/state';
-import {updateSelf} from 'system/store/self';
-import {AppDispatch, SFC} from 'system/types';
-import yup from 'system/utils/yup';
+import Button, {ButtonType} from '../../components/Button';
+import {Input} from '../../components/FormElements';
+import Modal from '../../components/Modal';
+import {getSelf} from '../../selectors/state';
+import {updateSelf} from '../../store/self';
+import {AppDispatch, SFC} from '../../types';
+import yup from '../../utils/yup';
 
 export interface EditSelfModalProps {
   close(): void;

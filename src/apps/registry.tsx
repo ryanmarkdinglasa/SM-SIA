@@ -1,10 +1,10 @@
 import {useSelector, useDispatch} from 'react-redux';
-import {DatabaseManager, DatabaseManagerElectronStore, DatabaseManagerRegistration} from 'apps/DatabaseManager/registration';
-import {getManager} from 'system/selectors/state';
-import {AppDataHandlers, AppRegistration, SFC} from 'system/types';
-import { AppDispatch } from 'system/types';
+import {DatabaseManager, DatabaseManagerElectronStore, DatabaseManagerRegistration} from './DatabaseManager/registration';
+import {getManager} from '../system/selectors/state';
+import {AppDataHandlers, AppRegistration, SFC} from '../system/types';
+import { AppDispatch } from '../system/types';
 import { useEffect } from 'react';
-import { setActiveApp } from 'system/store/manager';
+import { setActiveApp } from '../system/store/manager';
 export interface AppsElectronStore extends DatabaseManagerElectronStore {}
 
 export const appReducers = {

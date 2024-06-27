@@ -1,4 +1,4 @@
-import { Config } from 'apps/DatabaseManager/types/config';
+import { Config } from '..';
 import { Page, User } from '.';
 
 export interface Manager {

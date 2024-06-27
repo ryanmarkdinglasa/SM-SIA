@@ -1,7 +1,7 @@
 import {Field as UField} from 'formik';
 import styled from 'styled-components';
 
-import {colors} from 'system/styles';
+import {colors} from '../../../styles';
 
 export const Field = styled(UField)`
   background: ${colors.palette.neutral['075']};

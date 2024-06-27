@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import {mdiAlertCircleOutline, mdiCheckCircle} from '@mdi/js';
 
-import Icon from 'system/components/Icon';
-import {colors} from 'system/styles';
-import {ToastType} from 'system/types';
+import Icon from '../../components/Icon';
+import {colors} from '../../styles';
+import {ToastType} from '../../types';
 
 export const Container = styled.div<{type: ToastType}>`
   background-color: ${({type}) => {

@@ -1,6 +1,6 @@
 import orderBy from 'lodash/orderBy';
 
-import {Balances, NetworkAccountOnlineStatuses, OnlineStatus} from 'system/types';
+import {Balances, NetworkAccountOnlineStatuses, OnlineStatus} from '../types';
 
 interface GetRecipientsDefaultNetworkId {
   balances: Balances;

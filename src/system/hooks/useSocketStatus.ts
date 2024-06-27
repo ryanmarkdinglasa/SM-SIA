@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getSocketStatuses} from 'system/selectors/state';
-import {SocketStatus} from 'system/types';
+import {getSocketStatuses} from '../selectors/state';
+import {SocketStatus} from '../types';
 
 const useSocketStatus = (networkId: string): SocketStatus => {
   const socketStatuses = useSelector(getSocketStatuses);

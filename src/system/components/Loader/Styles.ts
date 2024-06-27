@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components';
 import {mdiLoading} from '@mdi/js';
 
-import Icon from 'system/components/Icon';
+import Icon from '../../components/Icon';
 
 export const Container = styled.div`
   align-items: center;

@@ -1,4 +1,4 @@
-import {Block} from 'shared/types';
+import {Block} from '../../shared/types';
 
 export interface CreateBlockData {
   message: Block;

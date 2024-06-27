@@ -1,8 +1,8 @@
 import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import { Manager, DATABASE_MANAGER, } from '../types';
-import { IpcChannel } from "shared/types";
-import { setLocalAndStateReducer } from "system/utils/ipc";
-import { Config } from 'apps/DatabaseManager/types/config';
+import { IpcChannel } from "../../../shared/types";
+import { setLocalAndStateReducer } from "../../../system/utils/ipc";
+import { Config } from '../types/config';
 import { Page } from "../types/pages";
 import { User } from "../types/user";
 

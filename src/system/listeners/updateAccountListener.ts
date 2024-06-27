@@ -1,9 +1,9 @@
-import store from 'system/store';
-import {setBalance} from 'system/store/balances';
-import {AppDispatch, SocketDataStandard} from 'system/types';
-import {displayErrorToast} from 'system/utils/toast';
-import {validateIsSelfAccountNumber} from 'system/validators/common';
-import {updateAccountValidator} from 'system/validators/updateAccountValidators';
+import store from '../store';
+import {setBalance} from '../store/balances';
+import {AppDispatch, SocketDataStandard} from '../types';
+import {displayErrorToast} from '../utils/toast';
+import {validateIsSelfAccountNumber} from '../validators/common';
+import {updateAccountValidator} from '../validators/updateAccountValidators';
 
 const updateAccountListener = (dispatch: AppDispatch, networkId: string, socketData: SocketDataStandard) => {
   (async () => {

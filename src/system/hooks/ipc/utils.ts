@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import noop from 'lodash/noop';
 
-import {GenericVoidFunction} from 'shared/types';
+import {GenericVoidFunction} from '../../../shared/types';
 
 export const useIpcEffect = (channel: string, callback: GenericVoidFunction = noop) => {
   useEffect(() => {

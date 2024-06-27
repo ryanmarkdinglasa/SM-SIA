@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getNotificationCounts} from 'system/selectors/state';
+import {getNotificationCounts} from '../selectors/state';
 
 const useNotificationCount = (appId: string): number => {
   const notificationCounts = useSelector(getNotificationCounts);

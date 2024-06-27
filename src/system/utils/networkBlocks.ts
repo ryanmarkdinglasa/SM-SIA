@@ -1,7 +1,7 @@
 import {Block} from 'shared/types';
-import store from 'system/store';
-import {setNetworkBlock} from 'system/store/networkBlocks';
-import {currentSystemDate} from 'system/utils/dates';
+import store from '../store';
+import {setNetworkBlock} from '../store/networkBlocks';
+import {currentSystemDate} from '../utils/dates';
 
 export const logNetworkBlock = (block: Block, networkId: string) => {
   if (block.amount === 0) return;

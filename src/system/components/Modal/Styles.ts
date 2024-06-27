@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 
-import {colors, fonts} from 'system/styles';
+import {colors, fonts} from '../../styles';
 
 const addOverlay = keyframes`
   from {

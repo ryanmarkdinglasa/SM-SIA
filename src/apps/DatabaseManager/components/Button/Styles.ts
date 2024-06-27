@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import UIcon from '@mdi/react';
 
-import {colors} from 'apps/DatabaseManager/styles';
+import {colors} from '../../styles';
 import {ButtonColor} from './types';
 
 const BUTTON_HEIGHT = 36;

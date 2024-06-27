@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { getActiveDatabaseConfig, getActiveLicense } from '../selectors';
 import { baseUrl } from '../routes';
-import { setActivePage } from 'apps/DatabaseManager/store/manager';
+import { setActivePage } from '../store/manager';
 import { Page } from '../types';
 
 export const useWindowRender = () => {

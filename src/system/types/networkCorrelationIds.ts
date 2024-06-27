@@ -1,5 +1,5 @@
-import {Dict} from 'system/types/generic';
-import {SocketDataInternalMethod} from 'system/types/socketDataInternal';
+import {Dict} from '../types/generic';
+import {SocketDataInternalMethod} from '../types/socketDataInternal';
 
 export interface InternalRequestMapping {
   [key: string]: SocketDataInternalMethod;

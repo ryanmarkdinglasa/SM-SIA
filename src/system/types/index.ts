@@ -1,5 +1,5 @@
-import {AccountOnlineStatuses} from 'system/types/accountOnlineStatuses';
-import {Account, Accounts} from 'system/types/accounts';
+import {AccountOnlineStatuses} from '../types/accountOnlineStatuses';
+import {Account, Accounts} from '../types/accounts';
 import {
   AppDataHandler,
   AppDataHandlers,
@@ -8,28 +8,28 @@ import {
   AppProps,
   AppRegistration,
   SystemAppRegistration,
-} from 'system/types/apps';
-import {Balances} from 'system/types/balances';
-import {CoreAccount} from 'system/types/core';
-import {SystemElectronStore} from 'system/types/electronStore';
-import {Dict, SFC} from 'system/types/generic';
-import {IdentificationData} from 'system/types/identification';
-import {Internal} from 'system/types/internal';
-import {Manager} from 'system/types/manager';
-import {Network, NetworkProtocol, Networks} from 'system/types/networks';
-import {NetworkAccountOnlineStatuses} from 'system/types/networkAccountOnlineStatuses';
-import {NetworkBlock, NetworkBlocks} from 'system/types/networkBlocks';
-import {InternalRequestMapping, NetworkCorrelationIds} from 'system/types/networkCorrelationIds';
-import {NotificationCounts} from 'system/types/notificationCounts';
-import {OnlineStatus} from 'system/types/onlineStatuses';
+} from '../types/apps';
+import {Balances} from '../types/balances';
+import {CoreAccount} from '../types/core';
+import {SystemElectronStore} from '../types/electronStore';
+import {Dict, SFC} from '../types/generic';
+import {IdentificationData} from '../types/identification';
+import {Internal} from '../types/internal';
+import {Manager} from '../types/manager';
+import {Network, NetworkProtocol, Networks} from '../types/networks';
+import {NetworkAccountOnlineStatuses} from '../types/networkAccountOnlineStatuses';
+import {NetworkBlock, NetworkBlocks} from '../types/networkBlocks';
+import {InternalRequestMapping, NetworkCorrelationIds} from '../types/networkCorrelationIds';
+import {NotificationCounts} from '../types/notificationCounts';
+import {OnlineStatus} from '../types/onlineStatuses';
 import {
   NetworkPeerRequests,
   PeerRequestDetails,
   PeerRequestManager,
   PeerRequestMethod,
-} from 'system/types/peerRequestManager';
-import {Self} from 'system/types/self';
-import {SocketData} from 'system/types/socketData';
+} from '../types/peerRequestManager';
+import {Self} from '../types/self';
+import {SocketData} from '../types/socketData';
 import {
   AuthenticateRequest,
   AuthenticateResponse,
@@ -41,7 +41,7 @@ import {
   SetPeersResponse,
   SocketDataInternal,
   SocketDataInternalMethod,
-} from 'system/types/socketDataInternal';
+} from '../types/socketDataInternal';
 import {
   CreateBlockData,
   SocketDataStandard,
@@ -49,10 +49,10 @@ import {
   TrackOnlineStatusData,
   UpdateAccountData,
   UpdateAccountMessage,
-} from 'system/types/socketDataStandard';
-import {SocketStatus, SocketStatuses} from 'system/types/socketStatuses';
-import {AppDispatch, RootState} from 'system/types/store';
-import {ToastType} from 'system/types/toast';
+} from '../types/socketDataStandard';
+import {SocketStatus, SocketStatuses} from '../types/socketStatuses';
+import {AppDispatch, RootState} from '../types/store';
+import {ToastType} from '../types/toast';
 
 export {
   Account,

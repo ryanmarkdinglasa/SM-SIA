@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {colors, fonts} from 'system/styles';
+import {colors, fonts} from '../../styles';
 
 export const AccountNumber = styled.div`
   color: ${colors.palette.gray['500']};

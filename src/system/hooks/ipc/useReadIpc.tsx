@@ -1,8 +1,8 @@
 import {useCallback} from 'react';
 
-import {GenericVoidFunction, IpcChannel} from 'shared/types';
-import {getFailChannel, getSuccessChannel} from 'shared/utils/ipc';
-import {useIpcEffect} from 'system/hooks/ipc/utils';
+import {GenericVoidFunction, IpcChannel} from '../../../shared/types';
+import {getFailChannel, getSuccessChannel} from '../../../shared/utils/ipc';
+import {useIpcEffect} from '../../hooks/ipc/utils';
 
 function useReadIpc({
   channel,

@@ -1,5 +1,5 @@
-import {Self} from 'system/types';
-import {generateSignature, getKeyPairFromSigningKeyHex} from 'system/utils/tnb';
+import {Self} from '../types';
+import {generateSignature, getKeyPairFromSigningKeyHex} from '../utils/tnb';
 
 export const getAuthToken = (self: Self): string => {
   const now = new Date();

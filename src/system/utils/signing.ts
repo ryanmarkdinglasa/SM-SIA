@@ -1,4 +1,4 @@
-import {generateSignature, getKeyPairFromSigningKeyHex} from 'system/utils/tnb';
+import {generateSignature, getKeyPairFromSigningKeyHex} from '../utils/tnb';
 
 export const signData = (data: any, signingKeyHex: string) => {
   const {signingKey} = getKeyPairFromSigningKeyHex(signingKeyHex);

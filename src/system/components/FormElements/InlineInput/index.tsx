@@ -1,4 +1,4 @@
-import {SFC} from 'system/types';
+import {SFC} from '../../../types';
 import * as S from './Styles';
 
 export interface InlineInputProps {

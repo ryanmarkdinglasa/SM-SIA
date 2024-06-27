@@ -1,11 +1,11 @@
 import {CSSProperties, ReactNode, useCallback, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 
-import {GenericVoidFunction} from 'shared/types';
-import Icon from 'system/components/Icon';
-import {useEventListener, useToggle} from 'system/hooks';
-import {Menu, Option} from 'system/styles/components/DropMenuStyle';
-import {SFC} from 'system/types';
+import {GenericVoidFunction} from '../../../shared/types';
+import Icon from '../../components/Icon';
+import {useEventListener, useToggle} from '../../hooks';
+import {Menu, Option} from '../../styles/components/DropMenuStyle';
+import {SFC} from '../../types';
 
 export interface DropdownMenuOption {
   label: ReactNode;

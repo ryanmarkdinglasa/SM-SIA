@@ -1,6 +1,6 @@
-import socketDataInternalRouter from 'system/routers/socketDataInternalRouter';
-import socketDataStandardRouter from 'system/routers/socketDataStandardRouter';
-import {AppDispatch, SocketData, SocketDataInternal, SocketDataStandard} from 'system/types';
+import socketDataInternalRouter from '../routers/socketDataInternalRouter';
+import socketDataStandardRouter from '../routers/socketDataStandardRouter';
+import {AppDispatch, SocketData, SocketDataInternal, SocketDataStandard} from '../types';
 
 const rootRouter = (dispatch: AppDispatch, event: MessageEvent, networkId: string) => {
   const socketData: SocketData = JSON.parse(event.data);

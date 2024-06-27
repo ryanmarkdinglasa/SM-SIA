@@ -1,9 +1,9 @@
 import {createSlice, current, PayloadAction} from '@reduxjs/toolkit';
 
 import {IpcChannel} from 'shared/types';
-import {SYSTEM_BALANCES} from 'system/store/constants';
-import {Balances} from 'system/types';
-import {setLocalAndStateReducer} from 'system/utils/ipc';
+import {SYSTEM_BALANCES} from '../store/constants';
+import {Balances} from '../types';
+import {setLocalAndStateReducer} from '../utils/ipc';
 
 export const initialState: Balances = {};
 

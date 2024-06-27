@@ -1,8 +1,6 @@
 import { Connection as conn } from '../../../config/database';
 import { Int } from 'mssql';
-import { getConfig } from '../../../../../system/selectors/state';
-import { useSelector } from 'react-redux';
-
+import {CONFIGURATION} from '../../config';
 /**
  * Retrieves records from a given Id & Query.
  * @param {number} Id
@@ -14,8 +12,7 @@ export const recordByIdAndQuery = async (Id: number=0, Query: string=''): Promis
         if (isNaN(Id) || typeof Id !== 'number') return Promise.reject( new Error('Id must be a valid number'));
         if (!Query || typeof Query !== 'string') return Promise.reject( new Error('Query must be provided as a non-empty string'));
         if (Id < 1) return Promise.reject(new Error('Id must be a positive non-zero number'));
-        const config = useSelector(getConfig);
-        const pool:any = await conn(config);
+        const pool:any = (await conn(CONFIGURATION)).pool;
         if (!pool) return Promise.reject(new Error('Connection failed'));
         pool.setMaxListeners(15);
         const request = pool.request();

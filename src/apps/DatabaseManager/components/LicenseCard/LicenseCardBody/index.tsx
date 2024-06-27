@@ -1,17 +1,17 @@
-import { SFC, ToastType, AppDispatch } from 'system/types';
+import { SFC, ToastType, AppDispatch } from '../../../../../system/types';
 import * as S from './Styles';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
-import { displayToast } from 'system/utils/toast';
-import { setActiveLicense, setActivePage } from 'apps/DatabaseManager/store/manager';
+import { displayToast } from '../../../../../system/utils/toast';
+import { setActiveLicense, setActivePage } from '../../../store/manager';
 import * as yup from 'yup';  // corrected import
 import { Input } from '../../FormElements/Input';
 import { ButtonType, ButtonColor } from '../../Button/types';
 import axios from 'axios';
 import { baseUrl } from '../../../routes';
 import { Key } from '../..';
-import { Page } from 'apps/DatabaseManager/types';
+import { Page } from '../../../types';
 
 export const LicenseCardBody: SFC = ({ className }) => { 
     const dispatch = useDispatch<AppDispatch>();

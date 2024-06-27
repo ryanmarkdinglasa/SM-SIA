@@ -1,8 +1,8 @@
 import {Reducer} from '@reduxjs/toolkit';
 
 import {Block, LocalElectronStore} from 'shared/types';
-import {Dict} from 'system/types/generic';
-import {AppDispatch} from 'system/types/store';
+import {Dict} from '../types/generic';
+import {AppDispatch} from '../types/store';
 
 export type AppDataHandler = (block: Block, dispatch: AppDispatch, networkId: string) => void;
 

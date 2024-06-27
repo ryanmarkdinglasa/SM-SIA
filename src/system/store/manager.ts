@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {SYSTEM_MANAGER} from 'system/store/constants';
-import {Manager} from 'system/types';
-import {setLocalAndStateReducer} from 'system/utils/ipc';
+import {SYSTEM_MANAGER} from '../store/constants';
+import {Manager} from '../types';
+import {setLocalAndStateReducer} from '../utils/ipc';
 
 export const initialState: Manager = {
   activeApp: null,

@@ -3,3 +3,4 @@
 export * from './database';
 export * from './license';
 export * from './auth';
+export * from './setup';

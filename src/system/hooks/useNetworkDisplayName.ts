@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
 
-import {getNetworks} from 'system/selectors/state';
-import {truncate} from 'system/utils/strings';
+import {getNetworks} from '../selectors/state';
+import {truncate} from '../utils/strings';
 
 const useNetworkDisplayName = (networkId: string, maxLength?: number) => {
   const networks = useSelector(getNetworks);

@@ -1,4 +1,4 @@
-import { RootState } from 'system/types';
+import { RootState } from '../../../system/types';
 import { Page, User } from '../types/';
 
 export const getActiveDatabaseConfig = (state: RootState): string | null => state.databaseManager.manager.activeDatabaseConfig;

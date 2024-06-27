@@ -1,5 +1,5 @@
-import store from 'system/store';
-import {NetworkProtocol} from 'system/types';
+import store from '../store';
+import {NetworkProtocol} from '../types';
 
 export const getAddress = (networkId: string): string => {
   const {

@@ -1,7 +1,7 @@
 import {ReactNode, RefObject} from 'react';
 
-import {GenericVoidFunction} from 'shared/types';
-import {SFC} from 'system/types';
+import {GenericVoidFunction} from '../../../shared/types';
+import {SFC} from '../../types';
 import * as S from './Styles';
 
 export interface ToolbarItemProps {

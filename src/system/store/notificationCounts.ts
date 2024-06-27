@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {SYSTEM_NOTIFICATION_COUNTS} from 'system/store/constants';
-import {NotificationCounts} from 'system/types';
+import {SYSTEM_NOTIFICATION_COUNTS} from '../store/constants';
+import {NotificationCounts} from '../types';
 
 export const initialState: NotificationCounts = {};
 

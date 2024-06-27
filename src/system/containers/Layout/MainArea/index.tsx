@@ -1,5 +1,5 @@
-import {Apps} from 'apps/registry';
-import {SFC} from 'system/types';
+import {Apps} from '../../../../apps/registry';
+import {SFC} from '../../../types';
 import * as S from './Styles';
 
 const MainArea: SFC = ({className}) => {

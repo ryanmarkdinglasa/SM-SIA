@@ -1,6 +1,6 @@
-import {useNetworkDisplayImage, useSocketStatus} from 'system/hooks';
-import {colors} from 'system/styles';
-import {SFC, SocketStatus} from 'system/types';
+import {useNetworkDisplayImage, useSocketStatus} from '../../hooks';
+import {colors} from '../../styles';
+import {SFC, SocketStatus} from '../../types';
 import * as S from './Styles';
 
 export interface NetworkLogoProps {

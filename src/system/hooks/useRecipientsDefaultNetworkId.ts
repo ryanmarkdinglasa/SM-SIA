@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getBalances, getNetworkAccountOnlineStatuses} from 'system/selectors/state';
-import {getRecipientsDefaultNetworkId} from 'system/utils/networks';
+import {getBalances, getNetworkAccountOnlineStatuses} from '../selectors/state';
+import {getRecipientsDefaultNetworkId} from '../utils/networks';
 
 const useRecipientsDefaultNetworkId = (recipient: string): string | null => {
   const balances = useSelector(getBalances);

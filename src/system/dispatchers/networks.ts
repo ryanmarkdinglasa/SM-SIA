@@ -1,7 +1,7 @@
-import {_deleteBalance, _initializeBalance} from 'system/store/balances';
-import {_deleteNetwork} from 'system/store/networks';
-import {_deleteSocketStatus, _initializeSocketStatus} from 'system/store/socketStatuses';
-import {AppDispatch} from 'system/types';
+import {_deleteBalance, _initializeBalance} from '../store/balances';
+import {_deleteNetwork} from '../store/networks';
+import {_deleteSocketStatus, _initializeSocketStatus} from '../store/socketStatuses';
+import {AppDispatch} from '../types';
 
 export const deleteNetwork = (networkId: string) => async (dispatch: AppDispatch) => {
   dispatch(_deleteNetwork(networkId));

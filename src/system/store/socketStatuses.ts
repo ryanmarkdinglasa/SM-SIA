@@ -1,9 +1,9 @@
 import {createSlice, current, PayloadAction} from '@reduxjs/toolkit';
 
-import {IpcChannel} from 'shared/types';
-import {SYSTEM_SOCKET_STATUSES} from 'system/store/constants';
-import {SocketStatus, SocketStatuses} from 'system/types';
-import {setLocalAndStateReducer} from 'system/utils/ipc';
+import {IpcChannel} from '../../shared/types';
+import {SYSTEM_SOCKET_STATUSES} from '../store/constants';
+import {SocketStatus, SocketStatuses} from '../types';
+import {setLocalAndStateReducer} from '../utils/ipc';
 
 export const initialState: SocketStatuses = {};
 

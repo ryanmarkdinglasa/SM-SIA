@@ -1,4 +1,4 @@
-import { AppDispatch, SFC } from 'system/types';
+import { AppDispatch, SFC } from '../../../../system/types';
 import * as S from './Styles';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -6,7 +6,7 @@ import axios from 'axios';
 import { baseUrl } from '../../routes';
 import { ButtonType, ButtonColor } from '../Button/types';
 import { mdiContentCopy, mdiClipboardCheckMultipleOutline } from '@mdi/js';
-import { setActiveKey } from 'apps/DatabaseManager/store/manager';
+import { setActiveKey } from '../../store/manager';
 
 export const Key: SFC = ({ className }) => {
     const [key, setKey] = useState('');

@@ -1,6 +1,6 @@
-import {LocalElectronStore} from 'shared/types';
-import {initialState as accountsInitialState, setAccounts} from 'system/store/accounts';
-import {initializeBalances, initialState as balancesInitialState, setBalances} from 'system/store/balances';
+import {LocalElectronStore} from '../../shared/types';
+import {initialState as accountsInitialState, setAccounts} from '../store/accounts';
+import {initializeBalances, initialState as balancesInitialState, setBalances} from '../store/balances';
 import {
   SYSTEM_ACCOUNTS,
   SYSTEM_BALANCES,
@@ -9,17 +9,17 @@ import {
   SYSTEM_NETWORKS,
   SYSTEM_SELF,
   SYSTEM_SOCKET_STATUSES,
-} from 'system/store/constants';
-import {initialState as managerInitialState, setManager} from 'system/store/manager';
-import {initialState as networkBlocksInitialState, setNetworkBlocks} from 'system/store/networkBlocks';
-import {initialState as networksInitialState, setNetworks} from 'system/store/networks';
-import {initialState as selfInitialState, setSelf} from 'system/store/self';
+} from '../store/constants';
+import {initialState as managerInitialState, setManager} from '../store/manager';
+import {initialState as networkBlocksInitialState, setNetworkBlocks} from '../store/networkBlocks';
+import {initialState as networksInitialState, setNetworks} from '../store/networks';
+import {initialState as selfInitialState, setSelf} from '../store/self';
 import {
   initializeSocketStatuses,
   initialState as socketStatusesInitialState,
   setSocketStatuses,
-} from 'system/store/socketStatuses';
-import {AppDispatch, Self} from 'system/types';
+} from '../store/socketStatuses';
+import {AppDispatch, Self} from '../types';
 
 const loadSystemData = (dispatch: AppDispatch, store: LocalElectronStore): Self => {
   // System data

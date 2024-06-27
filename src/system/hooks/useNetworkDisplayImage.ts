@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
 
-import UnknownNetwork from 'system/assets/unknown-network.png';
-import {getNetworks} from 'system/selectors/state';
+import UnknownNetwork from '../assets/unknown-network.png';
+import {getNetworks} from '../selectors/state';
 
 const useNetworkDisplayImage = (networkId: string | null) => {
   const networks = useSelector(getNetworks);

@@ -1,5 +1,5 @@
-import { DatabaseManager } from 'apps/DatabaseManager/containers';
-import { AppRegistration } from 'system/types';
+import { DatabaseManager } from './containers';
+import { AppRegistration } from '../../system/types';
 import speedTestReducer from './store';
 import { DatabaseManagerElectronStore } from './types'
 import { loadDatabaseManagerStoreData } from './store/initializer';

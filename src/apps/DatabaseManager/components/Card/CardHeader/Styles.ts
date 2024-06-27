@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import UMdiIcon from '@mdi/react';
-import { colors } from 'apps/DatabaseManager/styles';
+import { colors } from '../../../styles';
 
 export const Container = styled.div`
 

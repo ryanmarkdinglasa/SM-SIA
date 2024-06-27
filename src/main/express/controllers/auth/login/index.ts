@@ -19,7 +19,7 @@ export const login = async (req:CustomRequest, res:Response) => {
     const { error }  = LoginSchema.validate({ UserName, Password });
     if ( error ) return res.status(400).json({ isLogin: false, message: ERROR.e00x19, error:error });
     
-    const user = (await getUserByUsername(UserName))[0];
+    const user = (await getUserByUsername(UserName));
     if (!user) return res.status(400).json({ isLogin: false, message: ERROR.e00x05 });
 
     const isPasswordValid = (Password === user.Password);

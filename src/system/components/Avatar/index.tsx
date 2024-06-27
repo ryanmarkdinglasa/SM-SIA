@@ -1,6 +1,6 @@
-import {useAccountDisplayImage, useAccountOnlineStatus} from 'system/hooks';
-import {colors} from 'system/styles';
-import {OnlineStatus, SFC} from 'system/types';
+import {useAccountDisplayImage, useAccountOnlineStatus} from '../../hooks';
+import {colors} from '../../styles';
+import {OnlineStatus, SFC} from '../../types';
 import * as S from './Styles';
 
 export interface AvatarProps {

@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getNetworkAccountOnlineStatuses} from 'system/selectors/state';
-import {AccountOnlineStatuses} from 'system/types';
+import {getNetworkAccountOnlineStatuses} from '../selectors/state';
+import {AccountOnlineStatuses} from '../types';
 
 const useUsersNetworkAccountOnlineStatuses = (accountNumber: string): AccountOnlineStatuses => {
   const networkAccountOnlineStatuses = useSelector(getNetworkAccountOnlineStatuses);

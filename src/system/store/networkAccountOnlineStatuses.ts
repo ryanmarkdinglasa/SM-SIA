@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {SYSTEM_NETWORK_ACCOUNT_ONLINE_STATUSES} from 'system/store/constants';
-import {AccountOnlineStatuses, NetworkAccountOnlineStatuses} from 'system/types';
+import {SYSTEM_NETWORK_ACCOUNT_ONLINE_STATUSES} from '../store/constants';
+import {AccountOnlineStatuses, NetworkAccountOnlineStatuses} from '../types';
 
 export const initialState: NetworkAccountOnlineStatuses = {};
 

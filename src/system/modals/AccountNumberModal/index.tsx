@@ -1,9 +1,9 @@
 import {useSelector} from 'react-redux';
 
-import Modal from 'system/components/Modal';
-import QrCopy from 'system/components/QrCopy';
-import {getSelf} from 'system/selectors/state';
-import {SFC} from 'system/types';
+import Modal from '../../components/Modal';
+import QrCopy from '../../components/QrCopy';
+import {getSelf} from '../../selectors/state';
+import {SFC} from '../../types';
 
 export interface AccountNumberModalProps {
   close(): void;

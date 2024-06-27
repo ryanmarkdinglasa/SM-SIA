@@ -1,8 +1,6 @@
 
 import { Connection as conn } from '../../../config/database';
-import { getConfig } from '../../../../../system/selectors/state';
-import { useSelector } from 'react-redux';
-
+import {CONFIGURATION} from '../../config';
 
 /**
  * Retrieves records from given query
@@ -12,8 +10,7 @@ import { useSelector } from 'react-redux';
 export const recordByQuery = async (Query: string = ''): Promise<Array<any>> => {
     try {
         if (!Query || typeof Query !== 'string') return Promise.reject(new Error('Query must be provided as a non-empty string'));
-        const config = useSelector(getConfig);
-        const pool:any = await conn(config);
+        const pool:any = (await conn(CONFIGURATION)).pool;
         if (!pool) return Promise.reject(new Error('Connection failed'));
         pool.setMaxListeners(15);
         const result = await  pool.request().query(Query);

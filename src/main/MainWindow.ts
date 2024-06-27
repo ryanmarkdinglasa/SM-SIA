@@ -79,7 +79,7 @@ class MainWindow {
           sandbox: false,
           nodeIntegration: true,
           contextIsolation: true,
-          devTools: true,
+          devTools: false,
         },
       }),
     );
@@ -96,7 +96,7 @@ class MainWindow {
         setTimeout(() => {
           MainWindow.show();
           MainWindow.splashWindow?.close();
-        }, 1000); // 10 seconds delay
+        }, 10000); // 10 seconds delay
       }
     });
 

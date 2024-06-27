@@ -1,5 +1,5 @@
-import {Dict} from 'system/types/generic';
-import {IdentificationData} from 'system/types/identification';
+import {Dict} from '../types/generic';
+import {IdentificationData} from '../types/identification';
 
 export interface Network extends IdentificationData {
   networkId: string;

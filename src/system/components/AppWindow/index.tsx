@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 
-import {AppProps, SFC} from 'system/types';
+import {AppProps, SFC} from '../../types';
 import * as S from './Styles';
 
 interface AppWindowProps extends AppProps {

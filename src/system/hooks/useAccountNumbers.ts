@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {getAccounts} from 'system/selectors/state';
+import {getAccounts} from '../selectors/state';
 
 const useAccountNumbers = (): string[] => {
   const accounts = useSelector(getAccounts);

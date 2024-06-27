@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {SYSTEM_NETWORK_CORRELATION_IDS} from 'system/store/constants';
-import {NetworkCorrelationIds, SocketDataInternalMethod} from 'system/types';
+import {SYSTEM_NETWORK_CORRELATION_IDS} from '../store/constants';
+import {NetworkCorrelationIds, SocketDataInternalMethod} from '../types';
 
 export const initialState: NetworkCorrelationIds = {};
 

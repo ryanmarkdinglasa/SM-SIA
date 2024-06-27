@@ -1,10 +1,10 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {useAccountNumbers} from 'system/hooks';
-import {getNetworkAccountOnlineStatuses} from 'system/selectors/state';
-import {setAccountOnlineStatuses} from 'system/store/accountOnlineStatuses';
-import {AccountOnlineStatuses, AppDispatch, OnlineStatus} from 'system/types';
+import {useAccountNumbers} from '../hooks';
+import {getNetworkAccountOnlineStatuses} from '../selectors/state';
+import {setAccountOnlineStatuses} from '../store/accountOnlineStatuses';
+import {AccountOnlineStatuses, AppDispatch, OnlineStatus} from '../types';
 
 const useAccountOnlineStatusManager = () => {
   const accountNumbers = useAccountNumbers();

@@ -5,6 +5,18 @@ import {IpcChannel, LocalElectronStore, SetStoreValuePayload} from '../shared/ty
 import {getFailChannel, getSuccessChannel} from '../shared/utils/ipc';
 import MainWindow from './MainWindow';
 import Store from './Store';
+import electronStore from 'electron-store';
+
+ipcMain.on(IpcChannel.setConfig, (event, {payload}) => {
+  try {
+    const store = new electronStore();
+    store.set('set-database-configuration', payload)
+    event.reply(getSuccessChannel(IpcChannel.setConfig));
+  } catch (error: any) {
+    console.log('Failed to set database config', error);
+    event.reply(getFailChannel(IpcChannel.setConfig), error.toString());
+  }
+});
 
 ipcMain.on(IpcChannel.clearStore, (event) => {
   try {

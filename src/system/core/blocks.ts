@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import {Block} from 'shared/types';
-import {getAddress} from 'system/utils/addresses';
-import {logNetworkBlock} from 'system/utils/networkBlocks';
+import {Block} from '../../shared/types';
+import {getAddress} from '../utils/addresses';
+import {logNetworkBlock} from '../utils/networkBlocks';
 
 export const createBlock = async (block: Block, networkId: string) => {
   const address = getAddress(networkId);

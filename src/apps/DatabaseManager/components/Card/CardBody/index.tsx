@@ -1,11 +1,11 @@
-import { SFC, ToastType, AppDispatch } from 'system/types';
+import { SFC, ToastType, AppDispatch } from '../../../../../system/types';
 import * as S from './Styles';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
-import { displayToast } from 'system/utils/toast';
-import { setActiveDatabaseConfig } from 'apps/DatabaseManager/store/manager';
-import { Config } from 'apps/DatabaseManager/types/config';
+import { displayToast } from '../../../../../system/utils/toast';
+import { setActiveDatabaseConfig } from '../../../store/manager';
+import { Config } from '../../../types/config';
 import * as yup from 'yup';  // corrected import
 import { Input } from '../../FormElements/Input';
 import { ButtonType, ButtonColor } from '../../Button/types';

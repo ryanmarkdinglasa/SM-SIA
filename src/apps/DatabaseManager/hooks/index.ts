@@ -1,2 +1,2 @@
 export * from './useWindowRender';
-export * from './useDatabaseConfig';
+//export * from './useDatabaseConfig';

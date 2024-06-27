@@ -2,15 +2,15 @@ import {useEffect, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
-import {useAccountNumbers} from 'system/hooks';
-import {getPeerRequestManager} from 'system/selectors/state';
-import {deleteNetworkAccountOnlineStatuses} from 'system/store/networkAccountOnlineStatuses';
-import {setNetworkCorrelationId} from 'system/store/networkCorrelationIds';
+import {useAccountNumbers} from '../../hooks';
+import {getPeerRequestManager} from '../../selectors/state';
+import {deleteNetworkAccountOnlineStatuses} from '../../store/networkAccountOnlineStatuses';
+import {setNetworkCorrelationId} from '../../store/networkCorrelationIds';
 import {
   deleteNetworkPeerRequests,
   initializeNetworkPeerRequests,
   setPeerRequestDetails,
-} from 'system/store/peerRequestManager';
+} from '../../store/peerRequestManager';
 import {
   AppDispatch,
   GetPeersRequest,
@@ -19,8 +19,8 @@ import {
   SetPeersRequest,
   SFC,
   SocketDataInternalMethod,
-} from 'system/types';
-import {currentSystemDate} from 'system/utils/dates';
+} from '../../types';
+import {currentSystemDate} from '../../utils/dates';
 
 interface NetworkPeerSyncManagerProps {
   networkId: string;

@@ -15,6 +15,7 @@ export enum IpcChannel {
   restartApp = 'restart-app',
   setStoreValue = 'set-store-value',
   closeApp = 'close-app',
+  setConfig = 'set-database-configuration'
 }
 
 export type SetStoreValuePayload<K extends keyof LocalElectronStore> = {

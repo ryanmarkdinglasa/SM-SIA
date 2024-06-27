@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import UEmptyState from 'system/components/EmptyState';
+import UEmptyState from '../../components/EmptyState';
 
 export const Container = styled.div`
   display: flex;
