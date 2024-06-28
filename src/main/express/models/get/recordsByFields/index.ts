@@ -1,6 +1,6 @@
 import { Connection as conn } from '../../../config/database';
-import {CONFIGURATION} from '../../config';
-
+import storage from 'node-persist';
+import { CONFIG } from '../../../shared';
 /**
  * Retrieves specific record from a given fields.
  * @param {string}  Query
@@ -9,8 +9,10 @@ import {CONFIGURATION} from '../../config';
  * @param {Array}   Data
  * @returns {Promise<Array>}
  */
+
 export const recordByFields = async (Query: string='', Field: Array<any> = [], Type: Array<any> = [], Data: Array<any> = []): Promise<Array<any>> => {
     try {
+        const config = await storage.getItem(CONFIG);
         if (!Query || typeof Query !== 'string') return Promise.reject(new Error('Query is empty'));
         if (!Field.every(field => field !== undefined)) {
             const undefinedIndex1:any = Field.findIndex((field, _index) => field === undefined);
@@ -25,7 +27,7 @@ export const recordByFields = async (Query: string='', Field: Array<any> = [], T
             return Promise.reject(new Error(`Data for field 'field${parseInt(undefinedIndex3, 10) +1}' is undefined`));
         }
         if (Field.length !== Data.length || Field.length !== Type.length) return Promise.reject(new Error('Parameters are empty, or their lengths do not match'));
-        const pool:any = (await conn(CONFIGURATION)).pool;
+        const pool:any = (await conn(config.config)).pool;
         if (!pool)  return Promise.reject(new Error(`Connection failed`));
         pool.setMaxListeners(15);
         const request = pool.request();

@@ -6,8 +6,7 @@
 */
 import { NVarChar }  from 'mssql'; 
 import { recordByFields } from '../../models'
-import { QUERY } from '../../shared'; 
-
+import { QUERY } from '../../shared';
 /**
  * Get an existing user
  * @param {String} Username - Username of a user

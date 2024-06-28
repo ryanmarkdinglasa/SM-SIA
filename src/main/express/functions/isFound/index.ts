@@ -4,7 +4,7 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-import { Get } from '../../models';
+import { recordByFields } from '../../models';
 /**
  * Check if the record already exists
  * @param {string} Table - The name of the table
@@ -19,7 +19,7 @@ export const isFound  = async (Table: string = '', Field: Array<string> = [], Ty
         if (!Table || typeof Table !== 'string') return flag;
         if (!Field || !Type || !Data || Field.length !== Type.length || Field.length !== Data.length) return flag;
         const conditions = Field.map((field, _index) => `${field} = @${field}`).join(' AND ');
-        const check = await Get.recordByFields(`SELECT TOP 1 FROM [dbo].[${Table}] WHERE ${conditions}`, Field, Type, Data);
+        const check = await recordByFields(`SELECT TOP 1 FROM [dbo].[${Table}] WHERE ${conditions}`, Field, Type, Data);
         if (check && check.length > 0) flag = true;
     } catch (error:any) {
         console.log('Error in isFound function:', error.message);

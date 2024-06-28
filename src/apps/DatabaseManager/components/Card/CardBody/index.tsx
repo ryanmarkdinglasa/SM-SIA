@@ -39,11 +39,14 @@ export const CardBody: SFC = ({ className }) => {
                 withCredentials: true,
             });
 
-            if (response.data.isConnected) {
+            if (!response.data.isConnected) displayToast('Database Connection Error!', ToastType.error);
+            else {
+                const response = await axios.post(`${baseUrl}/connection/set`, config, {
+                    withCredentials: true,
+                });
+                if (response.data.set)
                 dispatch(setActiveDatabaseConfig(config));
                 displayToast('Database Connected!', ToastType.success);
-            } else {
-                displayToast('Database Connection Error!', ToastType.error);
             }
         } catch (error) {
             dispatch(setActiveDatabaseConfig(null));

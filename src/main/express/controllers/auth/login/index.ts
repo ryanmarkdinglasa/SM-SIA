@@ -4,8 +4,6 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-
-
 import { LoginSchema } from '../../../schemas';
 import { ERROR, CustomRequest } from '../../../shared'
 import { getUserByUsername, generateToken, generateRefreshToken } from '../../../functions';
@@ -17,7 +15,7 @@ export const login = async (req:CustomRequest, res:Response) => {
     let UserName = data.UserName, Password = data.Password
 
     const { error }  = LoginSchema.validate({ UserName, Password });
-    if ( error ) return res.status(400).json({ isLogin: false, message: ERROR.e00x19, error:error });
+    if ( error ) return res.status(400).json({ isLogin: false, message: ERROR.e00x19 });
     
     const user = (await getUserByUsername(UserName));
     if (!user) return res.status(400).json({ isLogin: false, message: ERROR.e00x05 });

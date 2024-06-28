@@ -4,7 +4,7 @@
  * CHANGES      : N/A
  * LOG-DATE     : 2024-05-27 11:48PM
 */
-import { Get } from '../../models'
+import { recordByQuery } from '../../models'
 /**
  * Generate a 6 number code
  * @param {String} Table - Database table
@@ -13,7 +13,7 @@ import { Get } from '../../models'
 export const generateCode = async (Table: string = ''): Promise<string> => {
     try {
         if (typeof Table !== 'string' || !Table) return '';
-        const latest = await Get.recordByQuery(`SELECT MAX([Code]) AS Code FROM [dbo].[${Table}]`);
+        const latest = await recordByQuery(`SELECT MAX([Code]) AS Code FROM [dbo].[${Table}]`);
         const code = String(parseInt(latest[0].Code || 0, 10) + 1).padStart( 6, "0" );
         if (!code) return '';
         return code;

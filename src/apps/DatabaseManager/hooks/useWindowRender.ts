@@ -14,16 +14,16 @@ export const useWindowRender = () => {
   useEffect(() => {
     const checkLicense = async () => {
       try {
-        // Ensure activeLicense is properly structured
-        if (!activeLicense) {
-          console.error('Invalid license format:', activeLicense);
-          return false;
-        }
 
-        const response = await axios.post(`${baseUrl}/license/validate`, { license: activeLicense }, {
-          withCredentials: true,
-        });
-        return response.data.isLicense;
+        if (String(activeLicense).length > 0) {
+          const response = await axios.post(`${baseUrl}/license/validate`, { license: activeLicense }, {
+            withCredentials: true,
+          });
+          return response.data.isLicense;
+        }
+        
+        console.error('Invalid license format:', activeLicense);
+        return false;
       } catch (error: any) {
         console.error('Error validating license:', error.response ? error.response.data : error.message);
         return false;
@@ -32,14 +32,14 @@ export const useWindowRender = () => {
 
     const checkConnection = async () => {
       try {
-        if (!activeConfig) {
-          console.error('Invalid database config:', activeConfig);
-          return false;
+        if (JSON.stringify(activeConfig).length > 0) {
+          const response = await axios.post(`${baseUrl}/connection/check`, activeConfig, {
+            withCredentials: true,
+          });
+          return response.data.isConnected;
         }
-        const response = await axios.post(`${baseUrl}/connection/check`, activeConfig, {
-          withCredentials: true,
-        });
-        return response.data.isConnected;
+        console.error('Invalid database config:', activeConfig);
+        return false;
       } catch (error: any) {
         console.error('Error checking connection:', error.response ? error.response.data : error.message);
         return false;
@@ -68,5 +68,5 @@ export const useWindowRender = () => {
     };
 
     windowRender();
-  }, [activeConfig, activeLicense, dispatch]);
+  }, [activeConfig, activeLicense]);
 };

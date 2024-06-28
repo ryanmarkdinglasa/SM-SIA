@@ -1,5 +1,5 @@
 import { Connection } from '../../../config/database';
-import {CONFIGURATION} from '../../config';
+import { Config } from '../../../config/database';
 
 /**
  * Retrieves all records from a given Table.
@@ -8,10 +8,10 @@ import {CONFIGURATION} from '../../config';
 */
 //
 
-export const  recordsByTable = async (Table: string = ''): Promise<Array<any>> => {
+export const  recordsByTable = async (Config: Config, Table: string = ''): Promise<Array<any>> => {
     try {
         if (typeof Table !== 'string' || !Table) return Promise.reject(new Error('Table must be a string'));
-        const pool = (await Connection(CONFIGURATION)).pool;
+        const pool = (await Connection(Config)).pool;
         if (!pool)  return Promise.reject(new Error(`Connection failed`));
         const request = pool.request();
         const result = await request.query(`SELECT * FROM [${Table}]`);

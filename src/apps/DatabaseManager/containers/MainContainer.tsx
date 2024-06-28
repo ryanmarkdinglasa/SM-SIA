@@ -1,9 +1,9 @@
 import AppWindow from '../../../system/components/AppWindow';
 import {AppProps, SFC} from '../../../system/types';
-
 import { useWindowRender } from '../hooks';
-import * as S from './Styles';
 import { Renderer } from './Renderer';
+import * as S from './Styles';
+
 
 export const DatabaseManager: SFC<AppProps> = ({className, display}) => {
     useWindowRender();

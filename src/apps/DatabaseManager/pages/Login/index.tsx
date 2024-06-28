@@ -31,6 +31,9 @@ export const Login: SFC = ({className}) => {
         try {
             const response = await axios.post(`${baseUrl}/auth/login`, data, {
                 withCredentials: true,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             });
 
             if (response.data.isLogin) {
@@ -42,9 +45,20 @@ export const Login: SFC = ({className}) => {
                 dispatch(setActiveToken(null));
                 displayToast(response.data.message, ToastType.error);
             }
-        } catch (error) {
+        } catch (error: any) {
             dispatch(setActiveUser(null));
             dispatch(setActiveToken(null));
+            if (error.response) {
+                // Server responded with a status other than 200 range
+                console.error('Error response:', error.response.data);
+                console.error('Error status:', error.response.status);
+            } else if (error.request) {
+                // Request was made but no response was received
+                console.error('Error request:', error.request);
+            } else {
+                // Something else happened in setting up the request
+                console.error('Error message:', error.message);
+            }
             displayToast('Something went wrong!', ToastType.error);
         }
     }

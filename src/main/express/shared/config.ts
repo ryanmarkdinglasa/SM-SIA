@@ -7,7 +7,7 @@
 
 import * as dotenv from "dotenv";
 dotenv.config();
-
+/*
 export const CONFIG = {
 	user: process.env.DB_USER as string,
 	password: process.env.DB_PASS as string,
@@ -21,7 +21,7 @@ export const CONFIG = {
 	},
 	port: parseInt(process.env.DB_PORT || '1433', 10) as number, // Default to port 1433 if not provided
 };
-
+*/
 export const token = {
     SECRET:  process.env.ACCESS_TOKEN_SECRET  as string,
     REFRESH: process.env.REFRESH_TOKEN_SECRET as string,
